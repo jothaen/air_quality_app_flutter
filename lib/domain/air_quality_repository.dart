@@ -1,4 +1,5 @@
 import 'package:air_quality_app/data/client/rest_client.dart';
+import 'package:air_quality_app/domain/mapper/air_quality_mapper.dart';
 import 'package:air_quality_app/domain/model/air_quality.dart';
 
 class AirQualityRepository {
@@ -9,10 +10,6 @@ class AirQualityRepository {
 
   Future<AirQuality> getAirQuality(String city) async {
     final result = await _restClient.getAirQuality(city, _token);
-    return AirQuality(
-      result.data.time.s,
-      result.data.aqi,
-      AirQualityNamed.good,
-    ); // TODO (piotrek): use mapper!
+    return AirQualityMapper.map(result.data);
   }
 }

@@ -1,9 +1,10 @@
 class AirQuality {
   final String dateTime;
+  final String locationName;
   final int airQualityIndex;
   final AirQualityNamed airQualityNamed;
 
-  AirQuality(this.dateTime, this.airQualityIndex, this.airQualityNamed);
+  AirQuality(this.dateTime, this.locationName, this.airQualityIndex, this.airQualityNamed);
 }
 
 enum AirQualityNamed {
@@ -12,5 +13,5 @@ enum AirQualityNamed {
   fair, // 67-99
   poor, // 100-149
   veryPoor, // 150-200
-  hazardous // 200+
+  hazardous, // 200+
 }
