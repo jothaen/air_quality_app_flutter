@@ -5,16 +5,21 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 class AirQualityCubit extends Cubit<AirQualityState> {
   final AirQualityRepository _repository;
 
-  AirQualityCubit(this._repository) : super(const AirQualityState.loading());
+  AirQualityCubit(this._repository) : super(const AirQualityState.idle());
 
-  Future<void> onInit() async {
+  Future<void> onSearch(String query) async {
+    if (query.isEmpty) {
+      emit(const AirQualityState.idle());
+      return;
+    }
+
     emit(const AirQualityState.loading());
     try {
-      final airQuality = await _repository.getAirQuality('Krakow'); // TODO
+      final airQuality = await _repository.getAirQuality(query);
 
       emit(AirQualityState.success(airQuality));
-    } on Exception catch (e) {
-      emit(AirQualityState.error(e));
+    } catch (e) {
+      emit(AirQualityState.error(Exception('Something went wrong')));
     }
   }
 }

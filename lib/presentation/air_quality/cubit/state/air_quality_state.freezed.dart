@@ -18,6 +18,7 @@ final _privateConstructorUsedError = UnsupportedError(
 mixin _$AirQualityState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
+    required TResult Function() idle,
     required TResult Function() loading,
     required TResult Function(AirQuality quality) success,
     required TResult Function(Exception error) error,
@@ -25,6 +26,7 @@ mixin _$AirQualityState {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? idle,
     TResult? Function()? loading,
     TResult? Function(AirQuality quality)? success,
     TResult? Function(Exception error)? error,
@@ -32,6 +34,7 @@ mixin _$AirQualityState {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? idle,
     TResult Function()? loading,
     TResult Function(AirQuality quality)? success,
     TResult Function(Exception error)? error,
@@ -40,6 +43,7 @@ mixin _$AirQualityState {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
+    required TResult Function(_AirQualityStateIdle value) idle,
     required TResult Function(_AirQualityStateLoading value) loading,
     required TResult Function(_AirQualityStateSuccess value) success,
     required TResult Function(_AirQualityStateError value) error,
@@ -47,6 +51,7 @@ mixin _$AirQualityState {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_AirQualityStateIdle value)? idle,
     TResult? Function(_AirQualityStateLoading value)? loading,
     TResult? Function(_AirQualityStateSuccess value)? success,
     TResult? Function(_AirQualityStateError value)? error,
@@ -54,6 +59,7 @@ mixin _$AirQualityState {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
+    TResult Function(_AirQualityStateIdle value)? idle,
     TResult Function(_AirQualityStateLoading value)? loading,
     TResult Function(_AirQualityStateSuccess value)? success,
     TResult Function(_AirQualityStateError value)? error,
@@ -78,6 +84,121 @@ class _$AirQualityStateCopyWithImpl<$Res, $Val extends AirQualityState>
   final $Val _value;
   // ignore: unused_field
   final $Res Function($Val) _then;
+}
+
+/// @nodoc
+abstract class _$$AirQualityStateIdleImplCopyWith<$Res> {
+  factory _$$AirQualityStateIdleImplCopyWith(_$AirQualityStateIdleImpl value,
+          $Res Function(_$AirQualityStateIdleImpl) then) =
+      __$$AirQualityStateIdleImplCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$AirQualityStateIdleImplCopyWithImpl<$Res>
+    extends _$AirQualityStateCopyWithImpl<$Res, _$AirQualityStateIdleImpl>
+    implements _$$AirQualityStateIdleImplCopyWith<$Res> {
+  __$$AirQualityStateIdleImplCopyWithImpl(_$AirQualityStateIdleImpl _value,
+      $Res Function(_$AirQualityStateIdleImpl) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$AirQualityStateIdleImpl implements _AirQualityStateIdle {
+  const _$AirQualityStateIdleImpl();
+
+  @override
+  String toString() {
+    return 'AirQualityState.idle()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$AirQualityStateIdleImpl);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() idle,
+    required TResult Function() loading,
+    required TResult Function(AirQuality quality) success,
+    required TResult Function(Exception error) error,
+  }) {
+    return idle();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? idle,
+    TResult? Function()? loading,
+    TResult? Function(AirQuality quality)? success,
+    TResult? Function(Exception error)? error,
+  }) {
+    return idle?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? idle,
+    TResult Function()? loading,
+    TResult Function(AirQuality quality)? success,
+    TResult Function(Exception error)? error,
+    required TResult orElse(),
+  }) {
+    if (idle != null) {
+      return idle();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_AirQualityStateIdle value) idle,
+    required TResult Function(_AirQualityStateLoading value) loading,
+    required TResult Function(_AirQualityStateSuccess value) success,
+    required TResult Function(_AirQualityStateError value) error,
+  }) {
+    return idle(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_AirQualityStateIdle value)? idle,
+    TResult? Function(_AirQualityStateLoading value)? loading,
+    TResult? Function(_AirQualityStateSuccess value)? success,
+    TResult? Function(_AirQualityStateError value)? error,
+  }) {
+    return idle?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_AirQualityStateIdle value)? idle,
+    TResult Function(_AirQualityStateLoading value)? loading,
+    TResult Function(_AirQualityStateSuccess value)? success,
+    TResult Function(_AirQualityStateError value)? error,
+    required TResult orElse(),
+  }) {
+    if (idle != null) {
+      return idle(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _AirQualityStateIdle implements AirQualityState {
+  const factory _AirQualityStateIdle() = _$AirQualityStateIdleImpl;
 }
 
 /// @nodoc
@@ -121,6 +242,7 @@ class _$AirQualityStateLoadingImpl implements _AirQualityStateLoading {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
+    required TResult Function() idle,
     required TResult Function() loading,
     required TResult Function(AirQuality quality) success,
     required TResult Function(Exception error) error,
@@ -131,6 +253,7 @@ class _$AirQualityStateLoadingImpl implements _AirQualityStateLoading {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? idle,
     TResult? Function()? loading,
     TResult? Function(AirQuality quality)? success,
     TResult? Function(Exception error)? error,
@@ -141,6 +264,7 @@ class _$AirQualityStateLoadingImpl implements _AirQualityStateLoading {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? idle,
     TResult Function()? loading,
     TResult Function(AirQuality quality)? success,
     TResult Function(Exception error)? error,
@@ -155,6 +279,7 @@ class _$AirQualityStateLoadingImpl implements _AirQualityStateLoading {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
+    required TResult Function(_AirQualityStateIdle value) idle,
     required TResult Function(_AirQualityStateLoading value) loading,
     required TResult Function(_AirQualityStateSuccess value) success,
     required TResult Function(_AirQualityStateError value) error,
@@ -165,6 +290,7 @@ class _$AirQualityStateLoadingImpl implements _AirQualityStateLoading {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_AirQualityStateIdle value)? idle,
     TResult? Function(_AirQualityStateLoading value)? loading,
     TResult? Function(_AirQualityStateSuccess value)? success,
     TResult? Function(_AirQualityStateError value)? error,
@@ -175,6 +301,7 @@ class _$AirQualityStateLoadingImpl implements _AirQualityStateLoading {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
+    TResult Function(_AirQualityStateIdle value)? idle,
     TResult Function(_AirQualityStateLoading value)? loading,
     TResult Function(_AirQualityStateSuccess value)? success,
     TResult Function(_AirQualityStateError value)? error,
@@ -258,6 +385,7 @@ class _$AirQualityStateSuccessImpl implements _AirQualityStateSuccess {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
+    required TResult Function() idle,
     required TResult Function() loading,
     required TResult Function(AirQuality quality) success,
     required TResult Function(Exception error) error,
@@ -268,6 +396,7 @@ class _$AirQualityStateSuccessImpl implements _AirQualityStateSuccess {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? idle,
     TResult? Function()? loading,
     TResult? Function(AirQuality quality)? success,
     TResult? Function(Exception error)? error,
@@ -278,6 +407,7 @@ class _$AirQualityStateSuccessImpl implements _AirQualityStateSuccess {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? idle,
     TResult Function()? loading,
     TResult Function(AirQuality quality)? success,
     TResult Function(Exception error)? error,
@@ -292,6 +422,7 @@ class _$AirQualityStateSuccessImpl implements _AirQualityStateSuccess {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
+    required TResult Function(_AirQualityStateIdle value) idle,
     required TResult Function(_AirQualityStateLoading value) loading,
     required TResult Function(_AirQualityStateSuccess value) success,
     required TResult Function(_AirQualityStateError value) error,
@@ -302,6 +433,7 @@ class _$AirQualityStateSuccessImpl implements _AirQualityStateSuccess {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_AirQualityStateIdle value)? idle,
     TResult? Function(_AirQualityStateLoading value)? loading,
     TResult? Function(_AirQualityStateSuccess value)? success,
     TResult? Function(_AirQualityStateError value)? error,
@@ -312,6 +444,7 @@ class _$AirQualityStateSuccessImpl implements _AirQualityStateSuccess {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
+    TResult Function(_AirQualityStateIdle value)? idle,
     TResult Function(_AirQualityStateLoading value)? loading,
     TResult Function(_AirQualityStateSuccess value)? success,
     TResult Function(_AirQualityStateError value)? error,
@@ -400,6 +533,7 @@ class _$AirQualityStateErrorImpl implements _AirQualityStateError {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
+    required TResult Function() idle,
     required TResult Function() loading,
     required TResult Function(AirQuality quality) success,
     required TResult Function(Exception error) error,
@@ -410,6 +544,7 @@ class _$AirQualityStateErrorImpl implements _AirQualityStateError {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? idle,
     TResult? Function()? loading,
     TResult? Function(AirQuality quality)? success,
     TResult? Function(Exception error)? error,
@@ -420,6 +555,7 @@ class _$AirQualityStateErrorImpl implements _AirQualityStateError {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? idle,
     TResult Function()? loading,
     TResult Function(AirQuality quality)? success,
     TResult Function(Exception error)? error,
@@ -434,6 +570,7 @@ class _$AirQualityStateErrorImpl implements _AirQualityStateError {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
+    required TResult Function(_AirQualityStateIdle value) idle,
     required TResult Function(_AirQualityStateLoading value) loading,
     required TResult Function(_AirQualityStateSuccess value) success,
     required TResult Function(_AirQualityStateError value) error,
@@ -444,6 +581,7 @@ class _$AirQualityStateErrorImpl implements _AirQualityStateError {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_AirQualityStateIdle value)? idle,
     TResult? Function(_AirQualityStateLoading value)? loading,
     TResult? Function(_AirQualityStateSuccess value)? success,
     TResult? Function(_AirQualityStateError value)? error,
@@ -454,6 +592,7 @@ class _$AirQualityStateErrorImpl implements _AirQualityStateError {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
+    TResult Function(_AirQualityStateIdle value)? idle,
     TResult Function(_AirQualityStateLoading value)? loading,
     TResult Function(_AirQualityStateSuccess value)? success,
     TResult Function(_AirQualityStateError value)? error,
