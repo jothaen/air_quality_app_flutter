@@ -13,6 +13,7 @@ class _ErrorWidget extends StatelessWidget {
         marginVertical16,
         Card(
           color: Colors.red,
+          shadowColor: Colors.redAccent,
           elevation: 16,
           child: Padding(
             padding: const EdgeInsets.all(16),

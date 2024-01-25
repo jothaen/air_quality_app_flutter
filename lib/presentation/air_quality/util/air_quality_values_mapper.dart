@@ -16,6 +16,7 @@ class AirQualityValuesMapper {
     };
   }
 
+  // TODO(piotrek): Find better colors :)
   static Color getMappedColor(AirQualityNamed airQualityNamed) {
     return switch (airQualityNamed) {
       AirQualityNamed.veryGood => Colors.greenAccent,

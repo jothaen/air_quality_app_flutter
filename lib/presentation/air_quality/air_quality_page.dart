@@ -1,3 +1,4 @@
+import 'package:air_quality_app/common/app_colors.dart';
 import 'package:air_quality_app/common/extensions/context_extensions.dart';
 import 'package:air_quality_app/common/gaps.dart';
 import 'package:air_quality_app/config/locator.dart';
@@ -42,7 +43,9 @@ class _AirQualityPageState extends State<AirQualityPage> {
       create: (context) => locator.get<AirQualityCubit>(),
       child: Builder(
         builder: (context) => Scaffold(
+          backgroundColor: AppColors.lightBlue,
           appBar: AppBar(
+            backgroundColor: AppColors.lightBlue,
             title: Text(context.i10n.airQuality),
           ),
           body: Padding(

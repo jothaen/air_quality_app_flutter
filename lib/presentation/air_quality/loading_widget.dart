@@ -9,7 +9,7 @@ class _LoadingWidget extends StatelessWidget {
       children: [
         marginVertical16,
         Card(
-          color: Colors.white,
+          surfaceTintColor: Colors.white,
           elevation: 16,
           child: SizedBox(
             height: 146,
