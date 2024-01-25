@@ -11,7 +11,7 @@ class _AirQualityWidget extends StatelessWidget {
       children: [
         marginVertical16,
         Card(
-          color: Colors.white,
+          color: AirQualityValuesMapper.getMappedColor(quality.airQualityNamed).withOpacity(0.8),
           elevation: 16,
           child: Padding(
             padding: const EdgeInsets.all(16),
@@ -28,7 +28,7 @@ class _AirQualityWidget extends StatelessWidget {
                 ),
                 marginVertical16,
                 Text(
-                  TextMapper.mapAirQuality(context, quality.airQualityNamed),
+                  AirQualityValuesMapper.getMappedName(context, quality.airQualityNamed),
                   style: Theme.of(context).textTheme.displaySmall,
                 ),
                 marginVertical2,

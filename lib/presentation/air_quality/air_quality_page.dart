@@ -4,7 +4,7 @@ import 'package:air_quality_app/config/locator.dart';
 import 'package:air_quality_app/domain/model/air_quality.dart';
 import 'package:air_quality_app/presentation/air_quality/cubit/air_quality_cubit.dart';
 import 'package:air_quality_app/presentation/air_quality/cubit/state/air_quality_state.dart';
-import 'package:air_quality_app/presentation/air_quality/util/text_mapper.dart';
+import 'package:air_quality_app/presentation/air_quality/util/air_quality_values_mapper.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:shimmer_animation/shimmer_animation.dart';
