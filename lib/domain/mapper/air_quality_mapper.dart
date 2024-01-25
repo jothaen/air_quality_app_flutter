@@ -5,7 +5,13 @@ class AirQualityMapper {
   AirQualityMapper._();
 
   static AirQuality map(AirQualityData data) {
-    return AirQuality(data.time.timeString, data.city.name, data.aqi, _mapAirQualityNamed(data.aqi));
+    return AirQuality(
+      data.time.timeString,
+      data.city.name,
+      data.aqi,
+      _mapAirQualityNamed(data.aqi),
+      _mapPollutionData(data.sensorsData),
+    );
   }
 
   static AirQualityNamed _mapAirQualityNamed(int aqi) {
@@ -21,6 +27,30 @@ class AirQualityMapper {
       return AirQualityNamed.veryPoor;
     } else {
       return AirQualityNamed.hazardous;
+    }
+  }
+
+  static List<PollutionData> _mapPollutionData(SensorsData sensorsData) {
+    final results = [
+      _createPollutionData(Pollutant.pm10, sensorsData.pm10),
+      _createPollutionData(Pollutant.pm25, sensorsData.pm25),
+      _createPollutionData(Pollutant.no2, sensorsData.no2),
+      _createPollutionData(Pollutant.co, sensorsData.co),
+    ];
+    // filtering-out all null values from the results list
+    return results.whereType<PollutionData>().toList();
+  }
+
+  static PollutionData? _createPollutionData(Pollutant pollutant, SensorValue? sensorValue) {
+    if (sensorValue != null) {
+      return PollutionData(
+        pollutant.name,
+        sensorValue.value,
+        pollutant.unit,
+        sensorValue.value * 100 ~/ pollutant.normByWHO,
+      );
+    } else {
+      return null;
     }
   }
 }

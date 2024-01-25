@@ -22,16 +22,13 @@ class _ErrorWidget extends StatelessWidget {
                 const Icon(Icons.error, size: 48, color: Colors.white),
                 Text(
                   context.i10n.somethingWentWrong,
-                  style: Theme.of(context)
-                      .textTheme
-                      .titleLarge
-                      ?.copyWith(color: Colors.white, fontWeight: FontWeight.w500),
+                  style: context.theme.textTheme.titleLarge?.copyWith(color: Colors.white, fontWeight: FontWeight.w500),
                 ),
                 marginVertical24,
                 Text(
                   context.i10n.genericErrorDescription,
                   textAlign: TextAlign.center,
-                  style: Theme.of(context).textTheme.labelLarge?.copyWith(color: Colors.white),
+                  style: context.theme.textTheme.labelLarge?.copyWith(color: Colors.white),
                 ),
               ],
             ),
