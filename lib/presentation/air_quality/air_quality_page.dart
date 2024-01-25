@@ -86,17 +86,37 @@ class _AirQualityWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
+      crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
-        const SizedBox(height: 36),
-        Text(quality.locationName, textAlign: TextAlign.center),
-        Text(quality.dateTime),
-        const SizedBox(height: 24),
-        Text(
-          TextMapper.mapAirQuality(quality.airQualityNamed),
-          style: Theme.of(context).textTheme.displayMedium,
+        const SizedBox(height: 16),
+        Card(
+          color: Colors.white,
+          elevation: 16,
+          child: Padding(
+            padding: const EdgeInsets.all(16),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                Text(
+                  quality.locationName,
+                  textAlign: TextAlign.center,
+                  style: Theme.of(context).textTheme.bodySmall,
+                ),
+                Text(
+                  quality.dateTime,
+                  style: Theme.of(context).textTheme.bodySmall,
+                ),
+                const SizedBox(height: 16),
+                Text(
+                  TextMapper.mapAirQuality(quality.airQualityNamed),
+                  style: Theme.of(context).textTheme.displaySmall,
+                ),
+                const SizedBox(height: 2),
+                Text('Air quality index: ${quality.airQualityIndex}'),
+              ],
+            ),
+          ),
         ),
-        const SizedBox(height: 12),
-        Text(quality.airQualityIndex.toString()),
       ],
     );
   }
@@ -143,20 +163,37 @@ class _ErrorWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Padding(
-      padding: EdgeInsets.all(16.0),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: [
-          SizedBox(height: 48),
-          Text('Something went wrong 😔😔😔'),
-          SizedBox(height: 12),
-          Text(
-            'Probably we could not find any station for a given place name. Try again',
-            textAlign: TextAlign.center,
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.stretch,
+      children: [
+        const SizedBox(height: 16),
+        Card(
+          color: Colors.red,
+          elevation: 16,
+          child: Padding(
+            padding: const EdgeInsets.all(16.0),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                const Icon(Icons.error, size: 48, color: Colors.white),
+                Text(
+                  'Something went wrong 😔',
+                  style: Theme.of(context)
+                      .textTheme
+                      .titleLarge
+                      ?.copyWith(color: Colors.white, fontWeight: FontWeight.w500),
+                ),
+                const SizedBox(height: 24),
+                Text(
+                  'Probably we could not find any station for a given place name. Try again',
+                  textAlign: TextAlign.center,
+                  style: Theme.of(context).textTheme.labelLarge?.copyWith(color: Colors.white),
+                ),
+              ],
+            ),
           ),
-        ],
-      ),
+        ),
+      ],
     );
   }
 }
