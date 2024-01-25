@@ -3,9 +3,9 @@ import 'package:air_quality_app/presentation/air_quality/cubit/state/air_quality
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class AirQualityCubit extends Cubit<AirQualityState> {
-  final AirQualityRepository _repository;
-
   AirQualityCubit(this._repository) : super(const AirQualityState.idle());
+
+  final AirQualityRepository _repository;
 
   Future<void> onSearch(String query) async {
     if (query.isEmpty) {

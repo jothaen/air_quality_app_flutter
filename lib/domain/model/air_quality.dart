@@ -1,10 +1,9 @@
 class AirQuality {
+  AirQuality(this.dateTime, this.locationName, this.airQualityIndex, this.airQualityNamed);
   final String dateTime;
   final String locationName;
   final int airQualityIndex;
   final AirQualityNamed airQualityNamed;
-
-  AirQuality(this.dateTime, this.locationName, this.airQualityIndex, this.airQualityNamed);
 }
 
 enum AirQualityNamed {

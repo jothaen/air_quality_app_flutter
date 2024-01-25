@@ -1,6 +1,6 @@
 import 'package:air_quality_app/config/locator.dart';
 import 'package:air_quality_app/domain/model/air_quality.dart';
-import 'package:air_quality_app/presentation/air_quality/cubit/air_cuality_cubit.dart';
+import 'package:air_quality_app/presentation/air_quality/cubit/air_quality_cubit.dart';
 import 'package:air_quality_app/presentation/air_quality/cubit/state/air_quality_state.dart';
 import 'package:air_quality_app/presentation/air_quality/text_mapper.dart';
 import 'package:flutter/material.dart';
@@ -38,7 +38,7 @@ class _AirQualityPageState extends State<AirQualityPage> {
             title: const Text('Air quality'),
           ),
           body: Padding(
-            padding: const EdgeInsets.all(16.0),
+            padding: const EdgeInsets.all(16),
             child: Column(
               children: [
                 Row(
@@ -50,9 +50,10 @@ class _AirQualityPageState extends State<AirQualityPage> {
                       ),
                     ),
                     TextButton.icon(
-                        onPressed: () => _onSearch(context),
-                        icon: const Icon(Icons.search),
-                        label: const Text('Search')),
+                      onPressed: () => _onSearch(context),
+                      icon: const Icon(Icons.search),
+                      label: const Text('Search'),
+                    ),
                   ],
                 ),
                 Expanded(
@@ -79,9 +80,8 @@ class _AirQualityPageState extends State<AirQualityPage> {
 }
 
 class _AirQualityWidget extends StatelessWidget {
-  final AirQuality quality;
-
   const _AirQualityWidget({required this.quality});
+  final AirQuality quality;
 
   @override
   Widget build(BuildContext context) {
@@ -95,7 +95,6 @@ class _AirQualityWidget extends StatelessWidget {
           child: Padding(
             padding: const EdgeInsets.all(16),
             child: Column(
-              crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 Text(
                   quality.locationName,
@@ -142,7 +141,6 @@ class _WelcomeWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const Column(
-      crossAxisAlignment: CrossAxisAlignment.center,
       children: [
         SizedBox(height: 48),
         Text('Welcome to the Air Quality App!'),
@@ -171,9 +169,8 @@ class _ErrorWidget extends StatelessWidget {
           color: Colors.red,
           elevation: 16,
           child: Padding(
-            padding: const EdgeInsets.all(16.0),
+            padding: const EdgeInsets.all(16),
             child: Column(
-              crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 const Icon(Icons.error, size: 48, color: Colors.white),
                 Text(

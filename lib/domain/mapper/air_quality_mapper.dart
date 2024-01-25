@@ -5,7 +5,7 @@ class AirQualityMapper {
   AirQualityMapper._();
 
   static AirQuality map(AirQualityData data) {
-    return AirQuality(data.time.s, data.city.name, data.aqi, _mapAirQualityNamed(data.aqi));
+    return AirQuality(data.time.timeString, data.city.name, data.aqi, _mapAirQualityNamed(data.aqi));
   }
 
   static AirQualityNamed _mapAirQualityNamed(int aqi) {

@@ -44,5 +44,5 @@ ResponseTime _$ResponseTimeFromJson(Map<String, dynamic> json) => ResponseTime(
 
 Map<String, dynamic> _$ResponseTimeToJson(ResponseTime instance) =>
     <String, dynamic>{
-      's': instance.s,
+      's': instance.timeString,
     };

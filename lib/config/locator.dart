@@ -1,12 +1,12 @@
 import 'package:air_quality_app/data/api/weather_api.dart';
 import 'package:air_quality_app/domain/air_quality_repository.dart';
-import 'package:air_quality_app/presentation/air_quality/cubit/air_cuality_cubit.dart';
+import 'package:air_quality_app/presentation/air_quality/cubit/air_quality_cubit.dart';
 import 'package:dio/dio.dart';
 import 'package:get_it/get_it.dart';
 
 final locator = GetIt.instance;
 
-Future<void> setupServiceLocator() async {
+void setupServiceLocator() {
   _setupData();
   _setUpRepositories();
   _setupCubits();
