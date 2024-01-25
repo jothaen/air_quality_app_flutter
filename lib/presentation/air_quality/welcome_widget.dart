@@ -7,9 +7,9 @@ class _WelcomeWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return const Column(
       children: [
-        SizedBox(height: 48),
+        marginVertical48,
         Text('Welcome to the Air Quality App!'),
-        SizedBox(height: 12),
+        marginVertical12,
         Text(
           'Use the search bar above to find the information about air quality in your place!',
           textAlign: TextAlign.center,

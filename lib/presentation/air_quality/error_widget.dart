@@ -10,7 +10,7 @@ class _ErrorWidget extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
-        const SizedBox(height: 16),
+        marginVertical16,
         Card(
           color: Colors.red,
           elevation: 16,
@@ -26,7 +26,7 @@ class _ErrorWidget extends StatelessWidget {
                       .titleLarge
                       ?.copyWith(color: Colors.white, fontWeight: FontWeight.w500),
                 ),
-                const SizedBox(height: 24),
+                marginVertical24,
                 Text(
                   'Probably we could not find any station for a given place name. Try again',
                   textAlign: TextAlign.center,

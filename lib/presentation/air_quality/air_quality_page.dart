@@ -1,3 +1,4 @@
+import 'package:air_quality_app/common/gaps.dart';
 import 'package:air_quality_app/config/locator.dart';
 import 'package:air_quality_app/domain/model/air_quality.dart';
 import 'package:air_quality_app/presentation/air_quality/cubit/air_quality_cubit.dart';

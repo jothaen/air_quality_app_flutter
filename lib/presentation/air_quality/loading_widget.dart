@@ -7,7 +7,7 @@ class _LoadingWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return const Column(
       children: [
-        SizedBox(height: 16),
+        marginVertical16,
         Card(
           color: Colors.white,
           elevation: 16,
@@ -19,11 +19,11 @@ class _LoadingWidget extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  SizedBox(height: 16),
+                  marginVertical16,
                   _Shimmer(width: 300, height: 20),
-                  SizedBox(height: 8),
+                  marginVertical8,
                   _Shimmer(width: 150, height: 14),
-                  SizedBox(height: 16),
+                  marginVertical16,
                   _Shimmer(width: 200, height: 16),
                 ],
               ),
@@ -36,10 +36,9 @@ class _LoadingWidget extends StatelessWidget {
 }
 
 class _Shimmer extends StatelessWidget {
-  const _Shimmer({required this.width, required this.height, this.child});
+  const _Shimmer({required this.width, required this.height});
   final double width;
   final double height;
-  final Widget? child;
 
   @override
   Widget build(BuildContext context) {
@@ -48,7 +47,6 @@ class _Shimmer extends StatelessWidget {
       child: SizedBox(
         width: width,
         height: height,
-        child: child,
       ),
     );
   }

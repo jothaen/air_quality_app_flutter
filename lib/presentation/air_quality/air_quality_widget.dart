@@ -9,7 +9,7 @@ class _AirQualityWidget extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
-        const SizedBox(height: 16),
+        marginVertical16,
         Card(
           color: Colors.white,
           elevation: 16,
@@ -26,12 +26,12 @@ class _AirQualityWidget extends StatelessWidget {
                   quality.dateTime,
                   style: Theme.of(context).textTheme.bodySmall,
                 ),
-                const SizedBox(height: 16),
+                marginVertical16,
                 Text(
                   TextMapper.mapAirQuality(quality.airQualityNamed),
                   style: Theme.of(context).textTheme.displaySmall,
                 ),
-                const SizedBox(height: 2),
+                marginVertical2,
                 Text('Air quality index: ${quality.airQualityIndex}'),
               ],
             ),
