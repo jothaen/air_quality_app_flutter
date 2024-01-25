@@ -1,3 +1,4 @@
+import 'package:air_quality_app/common/app_assets.dart';
 import 'package:air_quality_app/common/app_colors.dart';
 import 'package:air_quality_app/common/extensions/context_extensions.dart';
 import 'package:air_quality_app/common/gaps.dart';
@@ -48,44 +49,56 @@ class _AirQualityPageState extends State<AirQualityPage> {
             backgroundColor: AppColors.lightBlue,
             title: Text(context.i10n.airQuality),
           ),
-          body: Padding(
-            padding: const EdgeInsets.all(16),
-            child: Column(
-              children: [
-                Row(
+          body: Stack(
+            children: [
+              Align(
+                alignment: Alignment.bottomCenter,
+                child: Image.asset(
+                  AppAssets.imageCity,
+                  height: 450,
+                  fit: BoxFit.fitHeight,
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.all(16),
+                child: Column(
                   children: [
-                    Expanded(
-                      child: TextFormField(
-                        controller: _searchController,
-                        decoration: InputDecoration(hintText: context.i10n.enterThePlaceName),
-                      ),
+                    Row(
+                      children: [
+                        Expanded(
+                          child: TextFormField(
+                            controller: _searchController,
+                            decoration: InputDecoration(hintText: context.i10n.enterThePlaceName),
+                          ),
+                        ),
+                        TextButton.icon(
+                          onPressed: () => _onSearch(context),
+                          icon: const Icon(Icons.search),
+                          label: Text(context.i10n.search),
+                        ),
+                      ],
                     ),
-                    TextButton.icon(
-                      onPressed: () => _onSearch(context),
-                      icon: const Icon(Icons.search),
-                      label: Text(context.i10n.search),
+                    Expanded(
+                      child: SingleChildScrollView(
+                        child: BlocBuilder<AirQualityCubit, AirQualityState>(
+                          builder: (context, state) {
+                            return AnimatedSwitcher(
+                              duration: const Duration(milliseconds: 250),
+                              child: state.map(
+                                idle: (_) => const _WelcomeWidget(),
+                                loading: (_) => const _LoadingWidget(),
+                                success: (success) => _AirQualityWidget(quality: success.quality),
+                                error: (error) => _ErrorWidget(error: error.error),
+                              ),
+                            );
+                          },
+                        ),
+                      ),
                     ),
                   ],
                 ),
-                Expanded(
-                  child: SingleChildScrollView(
-                    child: BlocBuilder<AirQualityCubit, AirQualityState>(
-                      builder: (context, state) {
-                        return AnimatedSwitcher(
-                          duration: const Duration(milliseconds: 250),
-                          child: state.map(
-                            idle: (_) => const _WelcomeWidget(),
-                            loading: (_) => const _LoadingWidget(),
-                            success: (success) => _AirQualityWidget(quality: success.quality),
-                            error: (error) => _ErrorWidget(error: error.error),
-                          ),
-                        );
-                      },
-                    ),
-                  ),
-                ),
-              ],
-            ),
+              ),
+            ],
           ),
         ),
       ),
