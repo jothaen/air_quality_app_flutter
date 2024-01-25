@@ -67,11 +67,14 @@ class _AirQualityPageState extends State<AirQualityPage> {
                   child: SingleChildScrollView(
                     child: BlocBuilder<AirQualityCubit, AirQualityState>(
                       builder: (context, state) {
-                        return state.map(
-                          idle: (_) => const _WelcomeWidget(),
-                          loading: (_) => const _LoadingWidget(),
-                          success: (success) => _AirQualityWidget(quality: success.quality),
-                          error: (error) => _ErrorWidget(error: error.error),
+                        return AnimatedSwitcher(
+                          duration: const Duration(milliseconds: 250),
+                          child: state.map(
+                            idle: (_) => const _WelcomeWidget(),
+                            loading: (_) => const _LoadingWidget(),
+                            success: (success) => _AirQualityWidget(quality: success.quality),
+                            error: (error) => _ErrorWidget(error: error.error),
+                          ),
                         );
                       },
                     ),
