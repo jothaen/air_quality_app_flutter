@@ -1,3 +1,4 @@
+import 'package:air_quality_app/common/extensions/context_extensions.dart';
 import 'package:air_quality_app/common/gaps.dart';
 import 'package:air_quality_app/config/locator.dart';
 import 'package:air_quality_app/domain/model/air_quality.dart';
@@ -42,7 +43,7 @@ class _AirQualityPageState extends State<AirQualityPage> {
       child: Builder(
         builder: (context) => Scaffold(
           appBar: AppBar(
-            title: const Text('Air quality'),
+            title: Text(context.i10n.airQuality),
           ),
           body: Padding(
             padding: const EdgeInsets.all(16),
@@ -53,13 +54,13 @@ class _AirQualityPageState extends State<AirQualityPage> {
                     Expanded(
                       child: TextFormField(
                         controller: _searchController,
-                        decoration: const InputDecoration(hintText: 'Enter the place name'),
+                        decoration: InputDecoration(hintText: context.i10n.enterThePlaceName),
                       ),
                     ),
                     TextButton.icon(
                       onPressed: () => _onSearch(context),
                       icon: const Icon(Icons.search),
-                      label: const Text('Search'),
+                      label: Text(context.i10n.search),
                     ),
                   ],
                 ),

@@ -1,0 +1,16 @@
+{
+    "airQuality": "Air Quality",
+    "airQualityIndex": "Air Quality Index: {index}",
+    "enterThePlaceName": "Enter the place name",
+    "search": "Search",
+    "welcomeToTheAirQualityApp": "Welcome to the Air Quality App",
+    "useTheSearchBarToFindPlace": "Use the search bar above to find the information about the air quality in your place!",
+    "somethingWentWrong": "Something went wrong 😔",
+    "genericErrorDescription": "Probably we could not find any station for a given place name. Try again",
+    "airQualityVeryGood": "Very Good! 😍",
+    "airQualityGood": "Good 😊",
+    "airQualityFair": "Fair 🙂",
+    "airQualityPoor": "Poor 😐",
+    "airQualityVeryPoor": "Very Poor 😠",
+    "airQualityHazardous": "Hazardous 🤬"
+}

@@ -28,11 +28,11 @@ class _AirQualityWidget extends StatelessWidget {
                 ),
                 marginVertical16,
                 Text(
-                  TextMapper.mapAirQuality(quality.airQualityNamed),
+                  TextMapper.mapAirQuality(context, quality.airQualityNamed),
                   style: Theme.of(context).textTheme.displaySmall,
                 ),
                 marginVertical2,
-                Text('Air quality index: ${quality.airQualityIndex}'),
+                Text(context.i10n.airQualityIndex(quality.airQualityIndex)),
               ],
             ),
           ),

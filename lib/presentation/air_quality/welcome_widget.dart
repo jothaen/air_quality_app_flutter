@@ -5,13 +5,13 @@ class _WelcomeWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Column(
+    return Column(
       children: [
         marginVertical48,
-        Text('Welcome to the Air Quality App!'),
+        Text(context.i10n.welcomeToTheAirQualityApp),
         marginVertical12,
         Text(
-          'Use the search bar above to find the information about air quality in your place!',
+          context.i10n.useTheSearchBarToFindPlace,
           textAlign: TextAlign.center,
         ),
       ],

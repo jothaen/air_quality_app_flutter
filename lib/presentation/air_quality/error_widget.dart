@@ -20,7 +20,7 @@ class _ErrorWidget extends StatelessWidget {
               children: [
                 const Icon(Icons.error, size: 48, color: Colors.white),
                 Text(
-                  'Something went wrong 😔',
+                  context.i10n.somethingWentWrong,
                   style: Theme.of(context)
                       .textTheme
                       .titleLarge
@@ -28,7 +28,7 @@ class _ErrorWidget extends StatelessWidget {
                 ),
                 marginVertical24,
                 Text(
-                  'Probably we could not find any station for a given place name. Try again',
+                  context.i10n.genericErrorDescription,
                   textAlign: TextAlign.center,
                   style: Theme.of(context).textTheme.labelLarge?.copyWith(color: Colors.white),
                 ),
