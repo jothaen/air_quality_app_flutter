@@ -1,3 +1,4 @@
+import 'package:air_quality_app/common/extensions/cubit_extensions.dart';
 import 'package:air_quality_app/domain/search_repository.dart';
 import 'package:air_quality_app/presentation/search/cubit/state/search_state.dart';
 import 'package:flutter/widgets.dart';
@@ -10,17 +11,17 @@ class SearchCubit extends Cubit<SearchState> {
 
   Future<void> onSearch(String query) async {
     if (query.isEmpty) {
-      emit(const SearchState.idle());
+      safeEmit(const SearchState.idle());
       return;
     }
 
-    emit(const SearchState.loading());
+    safeEmit(const SearchState.loading());
     try {
       final results = await _repository.searchForCities(query);
-      emit(results.isEmpty ? const SearchState.noResults() : SearchState.results(results));
+      safeEmit(results.isEmpty ? const SearchState.noResults() : SearchState.results(results));
     } catch (e) {
       debugPrint(e.toString());
-      emit(SearchState.error(Exception('Something went wrong')));
+      safeEmit(SearchState.error(Exception('Something went wrong')));
     }
   }
 }

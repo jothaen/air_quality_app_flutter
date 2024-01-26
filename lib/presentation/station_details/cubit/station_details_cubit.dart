@@ -1,3 +1,4 @@
+import 'package:air_quality_app/common/extensions/cubit_extensions.dart';
 import 'package:air_quality_app/domain/air_quality_repository.dart';
 import 'package:air_quality_app/domain/favorites_repository.dart';
 import 'package:air_quality_app/presentation/station_details/cubit/state/station_details_state.dart';
@@ -13,19 +14,19 @@ class StationDetailsCubit extends Cubit<StationDetailsState> {
   final FavoritesRepository _favoritesRepository;
 
   Future<void> onInit(int cityId) async {
-    emit(const StationDetailsState.loading());
+    safeEmit(const StationDetailsState.loading());
     try {
       final airQuality = await _airQualityRepository.getAirQuality('@$cityId');
       final isFavorite = await _isFavorite(cityId);
 
-      emit(
+      safeEmit(
         StationDetailsState.success(
           quality: airQuality,
           isFavorite: isFavorite,
         ),
       );
     } catch (e) {
-      emit(StationDetailsState.error(Exception('Something went wrong')));
+      safeEmit(StationDetailsState.error(Exception('Something went wrong')));
     }
   }
 
@@ -36,13 +37,13 @@ class StationDetailsCubit extends Cubit<StationDetailsState> {
       isFavorite
           ? await _favoritesRepository.removeFromFavorites(cityId)
           : await _favoritesRepository.addToFavorites(cityId);
-      emit(StationDetailsState.favoriteStateChanged(isFavorite: !isFavorite));
+      safeEmit(StationDetailsState.favoriteStateChanged(isFavorite: !isFavorite));
 
       previousState.mapOrNull(
-        success: (success) => emit(success.copyWith(isFavorite: !isFavorite)),
+        success: (success) => safeEmit(success.copyWith(isFavorite: !isFavorite)),
       );
     } catch (e) {
-      emit(StationDetailsState.error(Exception('Something went wrong')));
+      safeEmit(StationDetailsState.error(Exception('Something went wrong')));
     }
   }
 
