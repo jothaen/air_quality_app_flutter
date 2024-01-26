@@ -1,4 +1,6 @@
-import 'package:air_quality_app/data/model/air_quality_response.dart';
+import 'package:air_quality_app/data/model/air_quality_data.dart';
+import 'package:air_quality_app/data/model/sensor_value.dart';
+import 'package:air_quality_app/data/model/sensors_data.dart';
 import 'package:air_quality_app/domain/model/air_quality.dart';
 
 class AirQualityMapper {
