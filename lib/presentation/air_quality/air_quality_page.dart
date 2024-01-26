@@ -13,7 +13,6 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 part 'air_quality_widget.dart';
 part 'error_widget.dart';
-part 'welcome_widget.dart';
 
 class AirQualityPage extends StatelessWidget {
   const AirQualityPage(this.cityId, {super.key});
