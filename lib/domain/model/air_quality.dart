@@ -1,6 +1,14 @@
 // ignore_for_file: prefer-correct-identifier-length
 class AirQuality {
-  AirQuality(this.dateTime, this.locationName, this.airQualityIndex, this.airQualityNamed, this.pollutionData);
+  AirQuality(
+    this.cityId,
+    this.dateTime,
+    this.locationName,
+    this.airQualityIndex,
+    this.airQualityNamed,
+    this.pollutionData,
+  );
+  final int cityId;
   final String dateTime;
   final String locationName;
   final int airQualityIndex;

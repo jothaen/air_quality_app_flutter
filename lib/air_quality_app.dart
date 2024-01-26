@@ -1,5 +1,5 @@
+import 'package:air_quality_app/common/router.dart' as router;
 import 'package:air_quality_app/generated/l10n.dart';
-import 'package:air_quality_app/presentation/air_quality/air_quality_page.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
@@ -22,7 +22,7 @@ class AirQualityApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.blue),
         useMaterial3: true,
       ),
-      home: const AirQualityPage(),
+      onGenerateRoute: router.generateRoute,
     );
   }
 }

@@ -1,17 +1,23 @@
-# air_quality_app
+# Air Quality App
 
-A new Flutter project.
+## Overview
+Welcome to the Air Quality App - a Flutter-based mobile application. This app helps users check air quality at specific measurement stations in cities and lets them add stations to favorites.
 
-## Getting Started
+Air quality data is fetched from [WAQI API](https://aqicn.org/json-api/doc/)
 
-This project is a starting point for a Flutter application.
+## Features
+- Search air quality in cities
+- Favorites for quick access
 
-A few resources to get you started if this is your first Flutter project:
+ ## Tech stack
+- Flutter / Dart
+- BLoC (Cubit)
+- GetIt
+- intl
+- Retrofit + Dio
+- Freezed
+- Hive
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+## Screen recording
+https://github.com/jothaen/air_quality_app_flutter/assets/6339642/3eccba9b-f949-48e9-bd5f-eb1cb1002bc5
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
-# air_quality_app

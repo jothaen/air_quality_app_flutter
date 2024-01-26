@@ -90,6 +90,76 @@ class I10n {
     );
   }
 
+  /// `Favorites`
+  String get favorites {
+    return Intl.message(
+      'Favorites',
+      name: 'favorites',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Station added to Favorites!`
+  String get addedToFavorites {
+    return Intl.message(
+      'Station added to Favorites!',
+      name: 'addedToFavorites',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Station removed from Favorites!`
+  String get removedFromFavorites {
+    return Intl.message(
+      'Station removed from Favorites!',
+      name: 'removedFromFavorites',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Add to Favorites`
+  String get addToFavorites {
+    return Intl.message(
+      'Add to Favorites',
+      name: 'addToFavorites',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Remove from Favorites`
+  String get removeFromFavorites {
+    return Intl.message(
+      'Remove from Favorites',
+      name: 'removeFromFavorites',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `You have no favorites stations yet`
+  String get noFavorites {
+    return Intl.message(
+      'You have no favorites stations yet',
+      name: 'noFavorites',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `No results found.`
+  String get noResults {
+    return Intl.message(
+      'No results found.',
+      name: 'noResults',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Welcome to the Air Quality App`
   String get welcomeToTheAirQualityApp {
     return Intl.message(

@@ -24,6 +24,10 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+        "addToFavorites":
+            MessageLookupByLibrary.simpleMessage("Add to Favorites"),
+        "addedToFavorites":
+            MessageLookupByLibrary.simpleMessage("Station added to Favorites!"),
         "airQuality": MessageLookupByLibrary.simpleMessage("Air Quality"),
         "airQualityFair": MessageLookupByLibrary.simpleMessage("Fair 🙂"),
         "airQualityGood": MessageLookupByLibrary.simpleMessage("Good 😊"),
@@ -37,8 +41,16 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Very Poor 😠"),
         "enterThePlaceName":
             MessageLookupByLibrary.simpleMessage("Enter the place name"),
+        "favorites": MessageLookupByLibrary.simpleMessage("Favorites"),
         "genericErrorDescription": MessageLookupByLibrary.simpleMessage(
             "Probably we could not find any station for a given place name. Try again"),
+        "noFavorites": MessageLookupByLibrary.simpleMessage(
+            "You have no favorites stations yet"),
+        "noResults": MessageLookupByLibrary.simpleMessage("No results found."),
+        "removeFromFavorites":
+            MessageLookupByLibrary.simpleMessage("Remove from Favorites"),
+        "removedFromFavorites": MessageLookupByLibrary.simpleMessage(
+            "Station removed from Favorites!"),
         "search": MessageLookupByLibrary.simpleMessage("Search"),
         "somethingWentWrong":
             MessageLookupByLibrary.simpleMessage("Something went wrong 😔"),
