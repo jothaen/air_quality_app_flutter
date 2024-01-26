@@ -100,6 +100,46 @@ class I10n {
     );
   }
 
+  /// `Station added to Favorites!`
+  String get addedToFavorites {
+    return Intl.message(
+      'Station added to Favorites!',
+      name: 'addedToFavorites',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Station removed from Favorites!`
+  String get removedFromFavorites {
+    return Intl.message(
+      'Station removed from Favorites!',
+      name: 'removedFromFavorites',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Add to Favorites`
+  String get addToFavorites {
+    return Intl.message(
+      'Add to Favorites',
+      name: 'addToFavorites',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Remove from Favorites`
+  String get removeFromFavorites {
+    return Intl.message(
+      'Remove from Favorites',
+      name: 'removeFromFavorites',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `No results found.`
   String get noResults {
     return Intl.message(

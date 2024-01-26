@@ -18,6 +18,14 @@ class AirQualityPage extends StatelessWidget {
   const AirQualityPage(this.cityId, {super.key});
   final int cityId;
 
+  void _onCubitStateChange(BuildContext context, AirQualityState state) {
+    state.mapOrNull(
+      favoriteStateChanged: (favoriteState) => context.showSnackBar(
+        favoriteState.isFavorite ? context.i10n.addedToFavorites : context.i10n.removedFromFavorites,
+      ),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
@@ -41,16 +49,22 @@ class AirQualityPage extends StatelessWidget {
                   ),
                 ),
                 SingleChildScrollView(
-                  child: BlocBuilder<AirQualityCubit, AirQualityState>(
+                  child: BlocConsumer<AirQualityCubit, AirQualityState>(
+                    listener: _onCubitStateChange,
+                    //buildWhen: (_, current) => current.maybeMap(orElse: () => true, favoriteStateChanged: (_) => false),
                     builder: (context, state) {
                       return Hero(
                         tag: cityId,
                         child: AnimatedSwitcher(
                           duration: const Duration(milliseconds: 250),
-                          child: state.map(
+                          child: state.maybeMap(
                             loading: (_) => const LoadingCard(height: 250),
-                            success: (success) => _AirQualityWidget(quality: success.quality),
+                            success: (success) => _AirQualityWidget(
+                              quality: success.quality,
+                              isFavorite: success.isFavorite,
+                            ),
                             error: (error) => _ErrorWidget(error: error.error),
+                            orElse: () => const SizedBox(),
                           ),
                         ),
                       );
