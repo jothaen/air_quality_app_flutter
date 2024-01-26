@@ -2,6 +2,7 @@ import 'package:air_quality_app/data/api/air_quality_api.dart';
 import 'package:air_quality_app/domain/air_quality_repository.dart';
 import 'package:air_quality_app/domain/favorites_repository.dart';
 import 'package:air_quality_app/domain/search_repository.dart';
+import 'package:air_quality_app/presentation/favorites/cubit/favorites_cubit.dart';
 import 'package:air_quality_app/presentation/search/cubit/search_cubit.dart';
 import 'package:air_quality_app/presentation/station_details/cubit/station_details_cubit.dart';
 import 'package:dio/dio.dart';
@@ -33,5 +34,6 @@ void _setUpRepositories() {
 void _setupCubits() {
   locator
     ..registerFactory(() => StationDetailsCubit(locator.get(), locator.get()))
-    ..registerFactory(() => SearchCubit(locator.get()));
+    ..registerFactory(() => SearchCubit(locator.get()))
+    ..registerFactory(() => FavoritesCubit(locator.get(), locator.get()));
 }

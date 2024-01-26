@@ -44,6 +44,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "favorites": MessageLookupByLibrary.simpleMessage("Favorites"),
         "genericErrorDescription": MessageLookupByLibrary.simpleMessage(
             "Probably we could not find any station for a given place name. Try again"),
+        "noFavorites": MessageLookupByLibrary.simpleMessage(
+            "You have no favorites stations yet"),
         "noResults": MessageLookupByLibrary.simpleMessage("No results found."),
         "removeFromFavorites":
             MessageLookupByLibrary.simpleMessage("Remove from Favorites"),

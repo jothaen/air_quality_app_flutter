@@ -8,6 +8,6 @@ abstract class SearchState with _$SearchState {
   const factory SearchState.idle() = _SearchStateIdle;
   const factory SearchState.loading() = _SearchStateLoading;
   const factory SearchState.results(List<CitySearchResult> results) = _SearchStateResults;
-  const factory SearchState.noResults() = _SearchNoResults;
-  const factory SearchState.error(Exception error) = _AirQualityStateError;
+  const factory SearchState.noResults() = _SearchStateNoResults;
+  const factory SearchState.error(Exception error) = _SearchStateError;
 }

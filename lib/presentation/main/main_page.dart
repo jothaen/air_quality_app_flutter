@@ -1,6 +1,7 @@
 import 'package:air_quality_app/common/app_assets.dart';
 import 'package:air_quality_app/common/app_colors.dart';
 import 'package:air_quality_app/common/extensions/context_extensions.dart';
+import 'package:air_quality_app/presentation/favorites/favorites_page.dart';
 import 'package:air_quality_app/presentation/search/search_page.dart';
 import 'package:flutter/material.dart';
 
@@ -44,7 +45,7 @@ class _MainPageState extends State<MainPage> {
           ),
           AnimatedSwitcher(
             duration: const Duration(milliseconds: 250),
-            child: _currentIndex == _indexSearch ? const SearchPage() : const Text('Favorites'),
+            child: _currentIndex == _indexSearch ? const SearchPage() : const FavoritesPage(),
           ),
         ],
       ),

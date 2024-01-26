@@ -17,6 +17,7 @@ class _AirQualityWidget extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
           Card(
+            color: Colors.white.withOpacity(0.75),
             surfaceTintColor: Colors.white,
             elevation: 16,
             child: Padding(

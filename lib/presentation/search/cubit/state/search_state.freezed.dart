@@ -49,8 +49,8 @@ mixin _$SearchState {
     required TResult Function(_SearchStateIdle value) idle,
     required TResult Function(_SearchStateLoading value) loading,
     required TResult Function(_SearchStateResults value) results,
-    required TResult Function(_SearchNoResults value) noResults,
-    required TResult Function(_AirQualityStateError value) error,
+    required TResult Function(_SearchStateNoResults value) noResults,
+    required TResult Function(_SearchStateError value) error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -58,8 +58,8 @@ mixin _$SearchState {
     TResult? Function(_SearchStateIdle value)? idle,
     TResult? Function(_SearchStateLoading value)? loading,
     TResult? Function(_SearchStateResults value)? results,
-    TResult? Function(_SearchNoResults value)? noResults,
-    TResult? Function(_AirQualityStateError value)? error,
+    TResult? Function(_SearchStateNoResults value)? noResults,
+    TResult? Function(_SearchStateError value)? error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -67,8 +67,8 @@ mixin _$SearchState {
     TResult Function(_SearchStateIdle value)? idle,
     TResult Function(_SearchStateLoading value)? loading,
     TResult Function(_SearchStateResults value)? results,
-    TResult Function(_SearchNoResults value)? noResults,
-    TResult Function(_AirQualityStateError value)? error,
+    TResult Function(_SearchStateNoResults value)? noResults,
+    TResult Function(_SearchStateError value)? error,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -173,8 +173,8 @@ class _$SearchStateIdleImpl implements _SearchStateIdle {
     required TResult Function(_SearchStateIdle value) idle,
     required TResult Function(_SearchStateLoading value) loading,
     required TResult Function(_SearchStateResults value) results,
-    required TResult Function(_SearchNoResults value) noResults,
-    required TResult Function(_AirQualityStateError value) error,
+    required TResult Function(_SearchStateNoResults value) noResults,
+    required TResult Function(_SearchStateError value) error,
   }) {
     return idle(this);
   }
@@ -185,8 +185,8 @@ class _$SearchStateIdleImpl implements _SearchStateIdle {
     TResult? Function(_SearchStateIdle value)? idle,
     TResult? Function(_SearchStateLoading value)? loading,
     TResult? Function(_SearchStateResults value)? results,
-    TResult? Function(_SearchNoResults value)? noResults,
-    TResult? Function(_AirQualityStateError value)? error,
+    TResult? Function(_SearchStateNoResults value)? noResults,
+    TResult? Function(_SearchStateError value)? error,
   }) {
     return idle?.call(this);
   }
@@ -197,8 +197,8 @@ class _$SearchStateIdleImpl implements _SearchStateIdle {
     TResult Function(_SearchStateIdle value)? idle,
     TResult Function(_SearchStateLoading value)? loading,
     TResult Function(_SearchStateResults value)? results,
-    TResult Function(_SearchNoResults value)? noResults,
-    TResult Function(_AirQualityStateError value)? error,
+    TResult Function(_SearchStateNoResults value)? noResults,
+    TResult Function(_SearchStateError value)? error,
     required TResult orElse(),
   }) {
     if (idle != null) {
@@ -293,8 +293,8 @@ class _$SearchStateLoadingImpl implements _SearchStateLoading {
     required TResult Function(_SearchStateIdle value) idle,
     required TResult Function(_SearchStateLoading value) loading,
     required TResult Function(_SearchStateResults value) results,
-    required TResult Function(_SearchNoResults value) noResults,
-    required TResult Function(_AirQualityStateError value) error,
+    required TResult Function(_SearchStateNoResults value) noResults,
+    required TResult Function(_SearchStateError value) error,
   }) {
     return loading(this);
   }
@@ -305,8 +305,8 @@ class _$SearchStateLoadingImpl implements _SearchStateLoading {
     TResult? Function(_SearchStateIdle value)? idle,
     TResult? Function(_SearchStateLoading value)? loading,
     TResult? Function(_SearchStateResults value)? results,
-    TResult? Function(_SearchNoResults value)? noResults,
-    TResult? Function(_AirQualityStateError value)? error,
+    TResult? Function(_SearchStateNoResults value)? noResults,
+    TResult? Function(_SearchStateError value)? error,
   }) {
     return loading?.call(this);
   }
@@ -317,8 +317,8 @@ class _$SearchStateLoadingImpl implements _SearchStateLoading {
     TResult Function(_SearchStateIdle value)? idle,
     TResult Function(_SearchStateLoading value)? loading,
     TResult Function(_SearchStateResults value)? results,
-    TResult Function(_SearchNoResults value)? noResults,
-    TResult Function(_AirQualityStateError value)? error,
+    TResult Function(_SearchStateNoResults value)? noResults,
+    TResult Function(_SearchStateError value)? error,
     required TResult orElse(),
   }) {
     if (loading != null) {
@@ -447,8 +447,8 @@ class _$SearchStateResultsImpl implements _SearchStateResults {
     required TResult Function(_SearchStateIdle value) idle,
     required TResult Function(_SearchStateLoading value) loading,
     required TResult Function(_SearchStateResults value) results,
-    required TResult Function(_SearchNoResults value) noResults,
-    required TResult Function(_AirQualityStateError value) error,
+    required TResult Function(_SearchStateNoResults value) noResults,
+    required TResult Function(_SearchStateError value) error,
   }) {
     return results(this);
   }
@@ -459,8 +459,8 @@ class _$SearchStateResultsImpl implements _SearchStateResults {
     TResult? Function(_SearchStateIdle value)? idle,
     TResult? Function(_SearchStateLoading value)? loading,
     TResult? Function(_SearchStateResults value)? results,
-    TResult? Function(_SearchNoResults value)? noResults,
-    TResult? Function(_AirQualityStateError value)? error,
+    TResult? Function(_SearchStateNoResults value)? noResults,
+    TResult? Function(_SearchStateError value)? error,
   }) {
     return results?.call(this);
   }
@@ -471,8 +471,8 @@ class _$SearchStateResultsImpl implements _SearchStateResults {
     TResult Function(_SearchStateIdle value)? idle,
     TResult Function(_SearchStateLoading value)? loading,
     TResult Function(_SearchStateResults value)? results,
-    TResult Function(_SearchNoResults value)? noResults,
-    TResult Function(_AirQualityStateError value)? error,
+    TResult Function(_SearchStateNoResults value)? noResults,
+    TResult Function(_SearchStateError value)? error,
     required TResult orElse(),
   }) {
     if (results != null) {
@@ -493,25 +493,25 @@ abstract class _SearchStateResults implements SearchState {
 }
 
 /// @nodoc
-abstract class _$$SearchNoResultsImplCopyWith<$Res> {
-  factory _$$SearchNoResultsImplCopyWith(_$SearchNoResultsImpl value,
-          $Res Function(_$SearchNoResultsImpl) then) =
-      __$$SearchNoResultsImplCopyWithImpl<$Res>;
+abstract class _$$SearchStateNoResultsImplCopyWith<$Res> {
+  factory _$$SearchStateNoResultsImplCopyWith(_$SearchStateNoResultsImpl value,
+          $Res Function(_$SearchStateNoResultsImpl) then) =
+      __$$SearchStateNoResultsImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$SearchNoResultsImplCopyWithImpl<$Res>
-    extends _$SearchStateCopyWithImpl<$Res, _$SearchNoResultsImpl>
-    implements _$$SearchNoResultsImplCopyWith<$Res> {
-  __$$SearchNoResultsImplCopyWithImpl(
-      _$SearchNoResultsImpl _value, $Res Function(_$SearchNoResultsImpl) _then)
+class __$$SearchStateNoResultsImplCopyWithImpl<$Res>
+    extends _$SearchStateCopyWithImpl<$Res, _$SearchStateNoResultsImpl>
+    implements _$$SearchStateNoResultsImplCopyWith<$Res> {
+  __$$SearchStateNoResultsImplCopyWithImpl(_$SearchStateNoResultsImpl _value,
+      $Res Function(_$SearchStateNoResultsImpl) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$SearchNoResultsImpl implements _SearchNoResults {
-  const _$SearchNoResultsImpl();
+class _$SearchStateNoResultsImpl implements _SearchStateNoResults {
+  const _$SearchStateNoResultsImpl();
 
   @override
   String toString() {
@@ -521,7 +521,8 @@ class _$SearchNoResultsImpl implements _SearchNoResults {
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$SearchNoResultsImpl);
+        (other.runtimeType == runtimeType &&
+            other is _$SearchStateNoResultsImpl);
   }
 
   @override
@@ -573,8 +574,8 @@ class _$SearchNoResultsImpl implements _SearchNoResults {
     required TResult Function(_SearchStateIdle value) idle,
     required TResult Function(_SearchStateLoading value) loading,
     required TResult Function(_SearchStateResults value) results,
-    required TResult Function(_SearchNoResults value) noResults,
-    required TResult Function(_AirQualityStateError value) error,
+    required TResult Function(_SearchStateNoResults value) noResults,
+    required TResult Function(_SearchStateError value) error,
   }) {
     return noResults(this);
   }
@@ -585,8 +586,8 @@ class _$SearchNoResultsImpl implements _SearchNoResults {
     TResult? Function(_SearchStateIdle value)? idle,
     TResult? Function(_SearchStateLoading value)? loading,
     TResult? Function(_SearchStateResults value)? results,
-    TResult? Function(_SearchNoResults value)? noResults,
-    TResult? Function(_AirQualityStateError value)? error,
+    TResult? Function(_SearchStateNoResults value)? noResults,
+    TResult? Function(_SearchStateError value)? error,
   }) {
     return noResults?.call(this);
   }
@@ -597,8 +598,8 @@ class _$SearchNoResultsImpl implements _SearchNoResults {
     TResult Function(_SearchStateIdle value)? idle,
     TResult Function(_SearchStateLoading value)? loading,
     TResult Function(_SearchStateResults value)? results,
-    TResult Function(_SearchNoResults value)? noResults,
-    TResult Function(_AirQualityStateError value)? error,
+    TResult Function(_SearchStateNoResults value)? noResults,
+    TResult Function(_SearchStateError value)? error,
     required TResult orElse(),
   }) {
     if (noResults != null) {
@@ -608,25 +609,25 @@ class _$SearchNoResultsImpl implements _SearchNoResults {
   }
 }
 
-abstract class _SearchNoResults implements SearchState {
-  const factory _SearchNoResults() = _$SearchNoResultsImpl;
+abstract class _SearchStateNoResults implements SearchState {
+  const factory _SearchStateNoResults() = _$SearchStateNoResultsImpl;
 }
 
 /// @nodoc
-abstract class _$$AirQualityStateErrorImplCopyWith<$Res> {
-  factory _$$AirQualityStateErrorImplCopyWith(_$AirQualityStateErrorImpl value,
-          $Res Function(_$AirQualityStateErrorImpl) then) =
-      __$$AirQualityStateErrorImplCopyWithImpl<$Res>;
+abstract class _$$SearchStateErrorImplCopyWith<$Res> {
+  factory _$$SearchStateErrorImplCopyWith(_$SearchStateErrorImpl value,
+          $Res Function(_$SearchStateErrorImpl) then) =
+      __$$SearchStateErrorImplCopyWithImpl<$Res>;
   @useResult
   $Res call({Exception error});
 }
 
 /// @nodoc
-class __$$AirQualityStateErrorImplCopyWithImpl<$Res>
-    extends _$SearchStateCopyWithImpl<$Res, _$AirQualityStateErrorImpl>
-    implements _$$AirQualityStateErrorImplCopyWith<$Res> {
-  __$$AirQualityStateErrorImplCopyWithImpl(_$AirQualityStateErrorImpl _value,
-      $Res Function(_$AirQualityStateErrorImpl) _then)
+class __$$SearchStateErrorImplCopyWithImpl<$Res>
+    extends _$SearchStateCopyWithImpl<$Res, _$SearchStateErrorImpl>
+    implements _$$SearchStateErrorImplCopyWith<$Res> {
+  __$$SearchStateErrorImplCopyWithImpl(_$SearchStateErrorImpl _value,
+      $Res Function(_$SearchStateErrorImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -634,7 +635,7 @@ class __$$AirQualityStateErrorImplCopyWithImpl<$Res>
   $Res call({
     Object? error = null,
   }) {
-    return _then(_$AirQualityStateErrorImpl(
+    return _then(_$SearchStateErrorImpl(
       null == error
           ? _value.error
           : error // ignore: cast_nullable_to_non_nullable
@@ -645,8 +646,8 @@ class __$$AirQualityStateErrorImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$AirQualityStateErrorImpl implements _AirQualityStateError {
-  const _$AirQualityStateErrorImpl(this.error);
+class _$SearchStateErrorImpl implements _SearchStateError {
+  const _$SearchStateErrorImpl(this.error);
 
   @override
   final Exception error;
@@ -660,7 +661,7 @@ class _$AirQualityStateErrorImpl implements _AirQualityStateError {
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$AirQualityStateErrorImpl &&
+            other is _$SearchStateErrorImpl &&
             (identical(other.error, error) || other.error == error));
   }
 
@@ -670,10 +671,9 @@ class _$AirQualityStateErrorImpl implements _AirQualityStateError {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$AirQualityStateErrorImplCopyWith<_$AirQualityStateErrorImpl>
-      get copyWith =>
-          __$$AirQualityStateErrorImplCopyWithImpl<_$AirQualityStateErrorImpl>(
-              this, _$identity);
+  _$$SearchStateErrorImplCopyWith<_$SearchStateErrorImpl> get copyWith =>
+      __$$SearchStateErrorImplCopyWithImpl<_$SearchStateErrorImpl>(
+          this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -721,8 +721,8 @@ class _$AirQualityStateErrorImpl implements _AirQualityStateError {
     required TResult Function(_SearchStateIdle value) idle,
     required TResult Function(_SearchStateLoading value) loading,
     required TResult Function(_SearchStateResults value) results,
-    required TResult Function(_SearchNoResults value) noResults,
-    required TResult Function(_AirQualityStateError value) error,
+    required TResult Function(_SearchStateNoResults value) noResults,
+    required TResult Function(_SearchStateError value) error,
   }) {
     return error(this);
   }
@@ -733,8 +733,8 @@ class _$AirQualityStateErrorImpl implements _AirQualityStateError {
     TResult? Function(_SearchStateIdle value)? idle,
     TResult? Function(_SearchStateLoading value)? loading,
     TResult? Function(_SearchStateResults value)? results,
-    TResult? Function(_SearchNoResults value)? noResults,
-    TResult? Function(_AirQualityStateError value)? error,
+    TResult? Function(_SearchStateNoResults value)? noResults,
+    TResult? Function(_SearchStateError value)? error,
   }) {
     return error?.call(this);
   }
@@ -745,8 +745,8 @@ class _$AirQualityStateErrorImpl implements _AirQualityStateError {
     TResult Function(_SearchStateIdle value)? idle,
     TResult Function(_SearchStateLoading value)? loading,
     TResult Function(_SearchStateResults value)? results,
-    TResult Function(_SearchNoResults value)? noResults,
-    TResult Function(_AirQualityStateError value)? error,
+    TResult Function(_SearchStateNoResults value)? noResults,
+    TResult Function(_SearchStateError value)? error,
     required TResult orElse(),
   }) {
     if (error != null) {
@@ -756,12 +756,12 @@ class _$AirQualityStateErrorImpl implements _AirQualityStateError {
   }
 }
 
-abstract class _AirQualityStateError implements SearchState {
-  const factory _AirQualityStateError(final Exception error) =
-      _$AirQualityStateErrorImpl;
+abstract class _SearchStateError implements SearchState {
+  const factory _SearchStateError(final Exception error) =
+      _$SearchStateErrorImpl;
 
   Exception get error;
   @JsonKey(ignore: true)
-  _$$AirQualityStateErrorImplCopyWith<_$AirQualityStateErrorImpl>
-      get copyWith => throw _privateConstructorUsedError;
+  _$$SearchStateErrorImplCopyWith<_$SearchStateErrorImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }

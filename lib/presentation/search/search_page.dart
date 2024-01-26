@@ -1,6 +1,8 @@
 import 'package:air_quality_app/common/extensions/context_extensions.dart';
 import 'package:air_quality_app/common/gaps.dart';
-import 'package:air_quality_app/common/widgets/loading_card.dart';
+import 'package:air_quality_app/common/widgets/empty_results_card.dart';
+import 'package:air_quality_app/common/widgets/error_card.dart';
+import 'package:air_quality_app/common/widgets/loading_list.dart';
 import 'package:air_quality_app/config/app_route.dart';
 import 'package:air_quality_app/config/locator.dart';
 import 'package:air_quality_app/domain/model/city_search_result.dart';
@@ -11,9 +13,6 @@ import 'package:air_quality_app/presentation/station_details/util/air_quality_va
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-part 'error_widget.dart';
-part 'loading_widget.dart';
-part 'no_results_widget.dart';
 part 'results_widget.dart';
 part 'welcome_widget.dart';
 
@@ -76,16 +75,16 @@ class _SearchPageState extends State<SearchPage> {
                       duration: const Duration(milliseconds: 250),
                       child: state.map(
                         idle: (_) => const _WelcomeWidget(),
-                        loading: (_) => const _LoadingWidget(),
+                        loading: (_) => const LoadingList(),
                         results: (results) => _ResultsWidget(
                           results: results.results,
                           onResultTap: (cityId) => _onResultTap(context, cityId),
                         ),
-                        noResults: (_) => const Align(
+                        noResults: (_) => Align(
                           alignment: Alignment.topCenter,
-                          child: _NoResultsWidget(),
+                          child: EmptyResultsCard(context.i10n.noResults),
                         ),
-                        error: (error) => _ErrorWidget(error: error.error),
+                        error: (error) => ErrorCard(message: context.i10n.genericErrorDescription),
                       ),
                     );
                   },

@@ -22,6 +22,7 @@ class _ResultsWidget extends StatelessWidget {
             },
             child: Card(
               clipBehavior: Clip.hardEdge,
+              color: Colors.white.withOpacity(0.75),
               surfaceTintColor: Colors.white,
               elevation: 16,
               child: InkWell(

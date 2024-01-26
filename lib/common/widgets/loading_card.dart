@@ -10,6 +10,7 @@ class LoadingCard extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.only(top: 8, left: 16, right: 16),
       child: Card(
+        color: Colors.white.withOpacity(0.75),
         surfaceTintColor: Colors.white,
         elevation: 16,
         child: SizedBox(

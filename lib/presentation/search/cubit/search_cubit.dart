@@ -1,7 +1,7 @@
 import 'package:air_quality_app/common/extensions/cubit_extensions.dart';
 import 'package:air_quality_app/domain/search_repository.dart';
 import 'package:air_quality_app/presentation/search/cubit/state/search_state.dart';
-import 'package:flutter/widgets.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class SearchCubit extends Cubit<SearchState> {

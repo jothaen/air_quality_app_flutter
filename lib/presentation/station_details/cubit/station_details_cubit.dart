@@ -2,6 +2,7 @@ import 'package:air_quality_app/common/extensions/cubit_extensions.dart';
 import 'package:air_quality_app/domain/air_quality_repository.dart';
 import 'package:air_quality_app/domain/favorites_repository.dart';
 import 'package:air_quality_app/presentation/station_details/cubit/state/station_details_state.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class StationDetailsCubit extends Cubit<StationDetailsState> {
@@ -26,6 +27,7 @@ class StationDetailsCubit extends Cubit<StationDetailsState> {
         ),
       );
     } catch (e) {
+      debugPrint(e.toString());
       safeEmit(StationDetailsState.error(Exception('Something went wrong')));
     }
   }

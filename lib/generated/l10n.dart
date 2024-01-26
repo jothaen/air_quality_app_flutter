@@ -140,6 +140,16 @@ class I10n {
     );
   }
 
+  /// `You have no favorites stations yet`
+  String get noFavorites {
+    return Intl.message(
+      'You have no favorites stations yet',
+      name: 'noFavorites',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `No results found.`
   String get noResults {
     return Intl.message(
