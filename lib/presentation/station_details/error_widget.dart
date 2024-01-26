@@ -1,4 +1,4 @@
-part of 'air_quality_page.dart';
+part of 'station_details_page.dart';
 
 class _ErrorWidget extends StatelessWidget {
   const _ErrorWidget({required this.error});

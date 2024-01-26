@@ -5,20 +5,20 @@ import 'package:air_quality_app/common/gaps.dart';
 import 'package:air_quality_app/common/widgets/loading_card.dart';
 import 'package:air_quality_app/config/locator.dart';
 import 'package:air_quality_app/domain/model/air_quality.dart';
-import 'package:air_quality_app/presentation/air_quality/cubit/air_quality_cubit.dart';
-import 'package:air_quality_app/presentation/air_quality/cubit/state/air_quality_state.dart';
-import 'package:air_quality_app/presentation/air_quality/util/air_quality_values_mapper.dart';
+import 'package:air_quality_app/presentation/station_details/cubit/state/station_details_state.dart';
+import 'package:air_quality_app/presentation/station_details/cubit/station_details_cubit.dart';
+import 'package:air_quality_app/presentation/station_details/util/air_quality_values_mapper.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 part 'air_quality_widget.dart';
 part 'error_widget.dart';
 
-class AirQualityPage extends StatelessWidget {
-  const AirQualityPage(this.cityId, {super.key});
+class StationDetailsPage extends StatelessWidget {
+  const StationDetailsPage(this.cityId, {super.key});
   final int cityId;
 
-  void _onCubitStateChange(BuildContext context, AirQualityState state) {
+  void _onCubitStateChange(BuildContext context, StationDetailsState state) {
     state.mapOrNull(
       favoriteStateChanged: (favoriteState) => context.showSnackBar(
         favoriteState.isFavorite ? context.i10n.addedToFavorites : context.i10n.removedFromFavorites,
@@ -29,7 +29,7 @@ class AirQualityPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (context) => locator.get<AirQualityCubit>()..onInit(cityId),
+      create: (context) => locator.get<StationDetailsCubit>()..onInit(cityId),
       child: Builder(
         builder: (context) {
           return Scaffold(
@@ -49,9 +49,8 @@ class AirQualityPage extends StatelessWidget {
                   ),
                 ),
                 SingleChildScrollView(
-                  child: BlocConsumer<AirQualityCubit, AirQualityState>(
+                  child: BlocConsumer<StationDetailsCubit, StationDetailsState>(
                     listener: _onCubitStateChange,
-                    //buildWhen: (_, current) => current.maybeMap(orElse: () => true, favoriteStateChanged: (_) => false),
                     builder: (context, state) {
                       return Hero(
                         tag: cityId,
@@ -80,8 +79,8 @@ class AirQualityPage extends StatelessWidget {
   }
 }
 
-class AirQualityPageArgs {
-  AirQualityPageArgs(this.cityId);
+class StationDetailsPageArgs {
+  StationDetailsPageArgs(this.cityId);
 
   final int cityId;
 }

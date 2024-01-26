@@ -4,10 +4,10 @@ import 'package:air_quality_app/common/widgets/loading_card.dart';
 import 'package:air_quality_app/config/app_route.dart';
 import 'package:air_quality_app/config/locator.dart';
 import 'package:air_quality_app/domain/model/city_search_result.dart';
-import 'package:air_quality_app/presentation/air_quality/air_quality_page.dart';
-import 'package:air_quality_app/presentation/air_quality/util/air_quality_values_mapper.dart';
 import 'package:air_quality_app/presentation/search/cubit/search_cubit.dart';
 import 'package:air_quality_app/presentation/search/cubit/state/search_state.dart';
+import 'package:air_quality_app/presentation/station_details/station_details_page.dart';
+import 'package:air_quality_app/presentation/station_details/util/air_quality_values_mapper.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -40,7 +40,7 @@ class _SearchPageState extends State<SearchPage> {
   }
 
   void _onResultTap(BuildContext context, int cityId) {
-    context.nav.pushNamed(AppRoute.cityDetails, arguments: AirQualityPageArgs(cityId));
+    context.nav.pushNamed(AppRoute.cityDetails, arguments: StationDetailsPageArgs(cityId));
   }
 
   @override

@@ -1,31 +1,31 @@
 import 'package:air_quality_app/domain/air_quality_repository.dart';
 import 'package:air_quality_app/domain/favorites_repository.dart';
-import 'package:air_quality_app/presentation/air_quality/cubit/state/air_quality_state.dart';
+import 'package:air_quality_app/presentation/station_details/cubit/state/station_details_state.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-class AirQualityCubit extends Cubit<AirQualityState> {
-  AirQualityCubit(
+class StationDetailsCubit extends Cubit<StationDetailsState> {
+  StationDetailsCubit(
     this._airQualityRepository,
     this._favoritesRepository,
-  ) : super(const AirQualityState.loading());
+  ) : super(const StationDetailsState.loading());
 
   final AirQualityRepository _airQualityRepository;
   final FavoritesRepository _favoritesRepository;
 
   Future<void> onInit(int cityId) async {
-    emit(const AirQualityState.loading());
+    emit(const StationDetailsState.loading());
     try {
       final airQuality = await _airQualityRepository.getAirQuality('@$cityId');
       final isFavorite = await _isFavorite(cityId);
 
       emit(
-        AirQualityState.success(
+        StationDetailsState.success(
           quality: airQuality,
           isFavorite: isFavorite,
         ),
       );
     } catch (e) {
-      emit(AirQualityState.error(Exception('Something went wrong')));
+      emit(StationDetailsState.error(Exception('Something went wrong')));
     }
   }
 
@@ -36,21 +36,13 @@ class AirQualityCubit extends Cubit<AirQualityState> {
       isFavorite
           ? await _favoritesRepository.removeFromFavorites(cityId)
           : await _favoritesRepository.addToFavorites(cityId);
-      emit(AirQualityState.favoriteStateChanged(isFavorite: !isFavorite));
+      emit(StationDetailsState.favoriteStateChanged(isFavorite: !isFavorite));
 
-      // TODO(piotrek): refactor this maybe
       previousState.mapOrNull(
-        success: (value) {
-          emit(
-            AirQualityState.success(
-              quality: value.quality,
-              isFavorite: !isFavorite,
-            ),
-          );
-        },
+        success: (success) => emit(success.copyWith(isFavorite: !isFavorite)),
       );
     } catch (e) {
-      emit(AirQualityState.error(Exception('Something went wrong')));
+      emit(StationDetailsState.error(Exception('Something went wrong')));
     }
   }
 

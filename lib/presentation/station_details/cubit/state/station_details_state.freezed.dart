@@ -3,7 +3,7 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
-part of 'air_quality_state.dart';
+part of 'station_details_state.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -15,7 +15,7 @@ final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
-mixin _$AirQualityState {
+mixin _$StationDetailsState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() loading,
@@ -43,28 +43,28 @@ mixin _$AirQualityState {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_AirQualityStateLoading value) loading,
-    required TResult Function(_AirQualityStateSuccess value) success,
-    required TResult Function(_AirQualityStateError value) error,
-    required TResult Function(_AirQualityFavoriteStateChanged value)
+    required TResult Function(_StationDetailsStateStateLoading value) loading,
+    required TResult Function(_StationDetailsStateStateSuccess value) success,
+    required TResult Function(_StationDetailsStateStateError value) error,
+    required TResult Function(_StationDetailsStateFavoriteStateChanged value)
         favoriteStateChanged,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_AirQualityStateLoading value)? loading,
-    TResult? Function(_AirQualityStateSuccess value)? success,
-    TResult? Function(_AirQualityStateError value)? error,
-    TResult? Function(_AirQualityFavoriteStateChanged value)?
+    TResult? Function(_StationDetailsStateStateLoading value)? loading,
+    TResult? Function(_StationDetailsStateStateSuccess value)? success,
+    TResult? Function(_StationDetailsStateStateError value)? error,
+    TResult? Function(_StationDetailsStateFavoriteStateChanged value)?
         favoriteStateChanged,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_AirQualityStateLoading value)? loading,
-    TResult Function(_AirQualityStateSuccess value)? success,
-    TResult Function(_AirQualityStateError value)? error,
-    TResult Function(_AirQualityFavoriteStateChanged value)?
+    TResult Function(_StationDetailsStateStateLoading value)? loading,
+    TResult Function(_StationDetailsStateStateSuccess value)? success,
+    TResult Function(_StationDetailsStateStateError value)? error,
+    TResult Function(_StationDetailsStateFavoriteStateChanged value)?
         favoriteStateChanged,
     required TResult orElse(),
   }) =>
@@ -72,16 +72,16 @@ mixin _$AirQualityState {
 }
 
 /// @nodoc
-abstract class $AirQualityStateCopyWith<$Res> {
-  factory $AirQualityStateCopyWith(
-          AirQualityState value, $Res Function(AirQualityState) then) =
-      _$AirQualityStateCopyWithImpl<$Res, AirQualityState>;
+abstract class $StationDetailsStateCopyWith<$Res> {
+  factory $StationDetailsStateCopyWith(
+          StationDetailsState value, $Res Function(StationDetailsState) then) =
+      _$StationDetailsStateCopyWithImpl<$Res, StationDetailsState>;
 }
 
 /// @nodoc
-class _$AirQualityStateCopyWithImpl<$Res, $Val extends AirQualityState>
-    implements $AirQualityStateCopyWith<$Res> {
-  _$AirQualityStateCopyWithImpl(this._value, this._then);
+class _$StationDetailsStateCopyWithImpl<$Res, $Val extends StationDetailsState>
+    implements $StationDetailsStateCopyWith<$Res> {
+  _$StationDetailsStateCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
@@ -90,38 +90,40 @@ class _$AirQualityStateCopyWithImpl<$Res, $Val extends AirQualityState>
 }
 
 /// @nodoc
-abstract class _$$AirQualityStateLoadingImplCopyWith<$Res> {
-  factory _$$AirQualityStateLoadingImplCopyWith(
-          _$AirQualityStateLoadingImpl value,
-          $Res Function(_$AirQualityStateLoadingImpl) then) =
-      __$$AirQualityStateLoadingImplCopyWithImpl<$Res>;
+abstract class _$$StationDetailsStateStateLoadingImplCopyWith<$Res> {
+  factory _$$StationDetailsStateStateLoadingImplCopyWith(
+          _$StationDetailsStateStateLoadingImpl value,
+          $Res Function(_$StationDetailsStateStateLoadingImpl) then) =
+      __$$StationDetailsStateStateLoadingImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$AirQualityStateLoadingImplCopyWithImpl<$Res>
-    extends _$AirQualityStateCopyWithImpl<$Res, _$AirQualityStateLoadingImpl>
-    implements _$$AirQualityStateLoadingImplCopyWith<$Res> {
-  __$$AirQualityStateLoadingImplCopyWithImpl(
-      _$AirQualityStateLoadingImpl _value,
-      $Res Function(_$AirQualityStateLoadingImpl) _then)
+class __$$StationDetailsStateStateLoadingImplCopyWithImpl<$Res>
+    extends _$StationDetailsStateCopyWithImpl<$Res,
+        _$StationDetailsStateStateLoadingImpl>
+    implements _$$StationDetailsStateStateLoadingImplCopyWith<$Res> {
+  __$$StationDetailsStateStateLoadingImplCopyWithImpl(
+      _$StationDetailsStateStateLoadingImpl _value,
+      $Res Function(_$StationDetailsStateStateLoadingImpl) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$AirQualityStateLoadingImpl implements _AirQualityStateLoading {
-  const _$AirQualityStateLoadingImpl();
+class _$StationDetailsStateStateLoadingImpl
+    implements _StationDetailsStateStateLoading {
+  const _$StationDetailsStateStateLoadingImpl();
 
   @override
   String toString() {
-    return 'AirQualityState.loading()';
+    return 'StationDetailsState.loading()';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$AirQualityStateLoadingImpl);
+            other is _$StationDetailsStateStateLoadingImpl);
   }
 
   @override
@@ -167,10 +169,10 @@ class _$AirQualityStateLoadingImpl implements _AirQualityStateLoading {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_AirQualityStateLoading value) loading,
-    required TResult Function(_AirQualityStateSuccess value) success,
-    required TResult Function(_AirQualityStateError value) error,
-    required TResult Function(_AirQualityFavoriteStateChanged value)
+    required TResult Function(_StationDetailsStateStateLoading value) loading,
+    required TResult Function(_StationDetailsStateStateSuccess value) success,
+    required TResult Function(_StationDetailsStateStateError value) error,
+    required TResult Function(_StationDetailsStateFavoriteStateChanged value)
         favoriteStateChanged,
   }) {
     return loading(this);
@@ -179,10 +181,10 @@ class _$AirQualityStateLoadingImpl implements _AirQualityStateLoading {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_AirQualityStateLoading value)? loading,
-    TResult? Function(_AirQualityStateSuccess value)? success,
-    TResult? Function(_AirQualityStateError value)? error,
-    TResult? Function(_AirQualityFavoriteStateChanged value)?
+    TResult? Function(_StationDetailsStateStateLoading value)? loading,
+    TResult? Function(_StationDetailsStateStateSuccess value)? success,
+    TResult? Function(_StationDetailsStateStateError value)? error,
+    TResult? Function(_StationDetailsStateFavoriteStateChanged value)?
         favoriteStateChanged,
   }) {
     return loading?.call(this);
@@ -191,10 +193,10 @@ class _$AirQualityStateLoadingImpl implements _AirQualityStateLoading {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_AirQualityStateLoading value)? loading,
-    TResult Function(_AirQualityStateSuccess value)? success,
-    TResult Function(_AirQualityStateError value)? error,
-    TResult Function(_AirQualityFavoriteStateChanged value)?
+    TResult Function(_StationDetailsStateStateLoading value)? loading,
+    TResult Function(_StationDetailsStateStateSuccess value)? success,
+    TResult Function(_StationDetailsStateStateError value)? error,
+    TResult Function(_StationDetailsStateFavoriteStateChanged value)?
         favoriteStateChanged,
     required TResult orElse(),
   }) {
@@ -205,27 +207,29 @@ class _$AirQualityStateLoadingImpl implements _AirQualityStateLoading {
   }
 }
 
-abstract class _AirQualityStateLoading implements AirQualityState {
-  const factory _AirQualityStateLoading() = _$AirQualityStateLoadingImpl;
+abstract class _StationDetailsStateStateLoading implements StationDetailsState {
+  const factory _StationDetailsStateStateLoading() =
+      _$StationDetailsStateStateLoadingImpl;
 }
 
 /// @nodoc
-abstract class _$$AirQualityStateSuccessImplCopyWith<$Res> {
-  factory _$$AirQualityStateSuccessImplCopyWith(
-          _$AirQualityStateSuccessImpl value,
-          $Res Function(_$AirQualityStateSuccessImpl) then) =
-      __$$AirQualityStateSuccessImplCopyWithImpl<$Res>;
+abstract class _$$StationDetailsStateStateSuccessImplCopyWith<$Res> {
+  factory _$$StationDetailsStateStateSuccessImplCopyWith(
+          _$StationDetailsStateStateSuccessImpl value,
+          $Res Function(_$StationDetailsStateStateSuccessImpl) then) =
+      __$$StationDetailsStateStateSuccessImplCopyWithImpl<$Res>;
   @useResult
   $Res call({AirQuality quality, bool isFavorite});
 }
 
 /// @nodoc
-class __$$AirQualityStateSuccessImplCopyWithImpl<$Res>
-    extends _$AirQualityStateCopyWithImpl<$Res, _$AirQualityStateSuccessImpl>
-    implements _$$AirQualityStateSuccessImplCopyWith<$Res> {
-  __$$AirQualityStateSuccessImplCopyWithImpl(
-      _$AirQualityStateSuccessImpl _value,
-      $Res Function(_$AirQualityStateSuccessImpl) _then)
+class __$$StationDetailsStateStateSuccessImplCopyWithImpl<$Res>
+    extends _$StationDetailsStateCopyWithImpl<$Res,
+        _$StationDetailsStateStateSuccessImpl>
+    implements _$$StationDetailsStateStateSuccessImplCopyWith<$Res> {
+  __$$StationDetailsStateStateSuccessImplCopyWithImpl(
+      _$StationDetailsStateStateSuccessImpl _value,
+      $Res Function(_$StationDetailsStateStateSuccessImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -234,7 +238,7 @@ class __$$AirQualityStateSuccessImplCopyWithImpl<$Res>
     Object? quality = null,
     Object? isFavorite = null,
   }) {
-    return _then(_$AirQualityStateSuccessImpl(
+    return _then(_$StationDetailsStateStateSuccessImpl(
       quality: null == quality
           ? _value.quality
           : quality // ignore: cast_nullable_to_non_nullable
@@ -249,8 +253,9 @@ class __$$AirQualityStateSuccessImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$AirQualityStateSuccessImpl implements _AirQualityStateSuccess {
-  const _$AirQualityStateSuccessImpl(
+class _$StationDetailsStateStateSuccessImpl
+    implements _StationDetailsStateStateSuccess {
+  const _$StationDetailsStateStateSuccessImpl(
       {required this.quality, required this.isFavorite});
 
   @override
@@ -260,14 +265,14 @@ class _$AirQualityStateSuccessImpl implements _AirQualityStateSuccess {
 
   @override
   String toString() {
-    return 'AirQualityState.success(quality: $quality, isFavorite: $isFavorite)';
+    return 'StationDetailsState.success(quality: $quality, isFavorite: $isFavorite)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$AirQualityStateSuccessImpl &&
+            other is _$StationDetailsStateStateSuccessImpl &&
             (identical(other.quality, quality) || other.quality == quality) &&
             (identical(other.isFavorite, isFavorite) ||
                 other.isFavorite == isFavorite));
@@ -279,9 +284,10 @@ class _$AirQualityStateSuccessImpl implements _AirQualityStateSuccess {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$AirQualityStateSuccessImplCopyWith<_$AirQualityStateSuccessImpl>
-      get copyWith => __$$AirQualityStateSuccessImplCopyWithImpl<
-          _$AirQualityStateSuccessImpl>(this, _$identity);
+  _$$StationDetailsStateStateSuccessImplCopyWith<
+          _$StationDetailsStateStateSuccessImpl>
+      get copyWith => __$$StationDetailsStateStateSuccessImplCopyWithImpl<
+          _$StationDetailsStateStateSuccessImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -323,10 +329,10 @@ class _$AirQualityStateSuccessImpl implements _AirQualityStateSuccess {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_AirQualityStateLoading value) loading,
-    required TResult Function(_AirQualityStateSuccess value) success,
-    required TResult Function(_AirQualityStateError value) error,
-    required TResult Function(_AirQualityFavoriteStateChanged value)
+    required TResult Function(_StationDetailsStateStateLoading value) loading,
+    required TResult Function(_StationDetailsStateStateSuccess value) success,
+    required TResult Function(_StationDetailsStateStateError value) error,
+    required TResult Function(_StationDetailsStateFavoriteStateChanged value)
         favoriteStateChanged,
   }) {
     return success(this);
@@ -335,10 +341,10 @@ class _$AirQualityStateSuccessImpl implements _AirQualityStateSuccess {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_AirQualityStateLoading value)? loading,
-    TResult? Function(_AirQualityStateSuccess value)? success,
-    TResult? Function(_AirQualityStateError value)? error,
-    TResult? Function(_AirQualityFavoriteStateChanged value)?
+    TResult? Function(_StationDetailsStateStateLoading value)? loading,
+    TResult? Function(_StationDetailsStateStateSuccess value)? success,
+    TResult? Function(_StationDetailsStateStateError value)? error,
+    TResult? Function(_StationDetailsStateFavoriteStateChanged value)?
         favoriteStateChanged,
   }) {
     return success?.call(this);
@@ -347,10 +353,10 @@ class _$AirQualityStateSuccessImpl implements _AirQualityStateSuccess {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_AirQualityStateLoading value)? loading,
-    TResult Function(_AirQualityStateSuccess value)? success,
-    TResult Function(_AirQualityStateError value)? error,
-    TResult Function(_AirQualityFavoriteStateChanged value)?
+    TResult Function(_StationDetailsStateStateLoading value)? loading,
+    TResult Function(_StationDetailsStateStateSuccess value)? success,
+    TResult Function(_StationDetailsStateStateError value)? error,
+    TResult Function(_StationDetailsStateFavoriteStateChanged value)?
         favoriteStateChanged,
     required TResult orElse(),
   }) {
@@ -361,33 +367,37 @@ class _$AirQualityStateSuccessImpl implements _AirQualityStateSuccess {
   }
 }
 
-abstract class _AirQualityStateSuccess implements AirQualityState {
-  const factory _AirQualityStateSuccess(
+abstract class _StationDetailsStateStateSuccess implements StationDetailsState {
+  const factory _StationDetailsStateStateSuccess(
       {required final AirQuality quality,
-      required final bool isFavorite}) = _$AirQualityStateSuccessImpl;
+      required final bool isFavorite}) = _$StationDetailsStateStateSuccessImpl;
 
   AirQuality get quality;
   bool get isFavorite;
   @JsonKey(ignore: true)
-  _$$AirQualityStateSuccessImplCopyWith<_$AirQualityStateSuccessImpl>
+  _$$StationDetailsStateStateSuccessImplCopyWith<
+          _$StationDetailsStateStateSuccessImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$AirQualityStateErrorImplCopyWith<$Res> {
-  factory _$$AirQualityStateErrorImplCopyWith(_$AirQualityStateErrorImpl value,
-          $Res Function(_$AirQualityStateErrorImpl) then) =
-      __$$AirQualityStateErrorImplCopyWithImpl<$Res>;
+abstract class _$$StationDetailsStateStateErrorImplCopyWith<$Res> {
+  factory _$$StationDetailsStateStateErrorImplCopyWith(
+          _$StationDetailsStateStateErrorImpl value,
+          $Res Function(_$StationDetailsStateStateErrorImpl) then) =
+      __$$StationDetailsStateStateErrorImplCopyWithImpl<$Res>;
   @useResult
   $Res call({Exception error});
 }
 
 /// @nodoc
-class __$$AirQualityStateErrorImplCopyWithImpl<$Res>
-    extends _$AirQualityStateCopyWithImpl<$Res, _$AirQualityStateErrorImpl>
-    implements _$$AirQualityStateErrorImplCopyWith<$Res> {
-  __$$AirQualityStateErrorImplCopyWithImpl(_$AirQualityStateErrorImpl _value,
-      $Res Function(_$AirQualityStateErrorImpl) _then)
+class __$$StationDetailsStateStateErrorImplCopyWithImpl<$Res>
+    extends _$StationDetailsStateCopyWithImpl<$Res,
+        _$StationDetailsStateStateErrorImpl>
+    implements _$$StationDetailsStateStateErrorImplCopyWith<$Res> {
+  __$$StationDetailsStateStateErrorImplCopyWithImpl(
+      _$StationDetailsStateStateErrorImpl _value,
+      $Res Function(_$StationDetailsStateStateErrorImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -395,7 +405,7 @@ class __$$AirQualityStateErrorImplCopyWithImpl<$Res>
   $Res call({
     Object? error = null,
   }) {
-    return _then(_$AirQualityStateErrorImpl(
+    return _then(_$StationDetailsStateStateErrorImpl(
       null == error
           ? _value.error
           : error // ignore: cast_nullable_to_non_nullable
@@ -406,22 +416,23 @@ class __$$AirQualityStateErrorImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$AirQualityStateErrorImpl implements _AirQualityStateError {
-  const _$AirQualityStateErrorImpl(this.error);
+class _$StationDetailsStateStateErrorImpl
+    implements _StationDetailsStateStateError {
+  const _$StationDetailsStateStateErrorImpl(this.error);
 
   @override
   final Exception error;
 
   @override
   String toString() {
-    return 'AirQualityState.error(error: $error)';
+    return 'StationDetailsState.error(error: $error)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$AirQualityStateErrorImpl &&
+            other is _$StationDetailsStateStateErrorImpl &&
             (identical(other.error, error) || other.error == error));
   }
 
@@ -431,10 +442,10 @@ class _$AirQualityStateErrorImpl implements _AirQualityStateError {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$AirQualityStateErrorImplCopyWith<_$AirQualityStateErrorImpl>
-      get copyWith =>
-          __$$AirQualityStateErrorImplCopyWithImpl<_$AirQualityStateErrorImpl>(
-              this, _$identity);
+  _$$StationDetailsStateStateErrorImplCopyWith<
+          _$StationDetailsStateStateErrorImpl>
+      get copyWith => __$$StationDetailsStateStateErrorImplCopyWithImpl<
+          _$StationDetailsStateStateErrorImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -476,10 +487,10 @@ class _$AirQualityStateErrorImpl implements _AirQualityStateError {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_AirQualityStateLoading value) loading,
-    required TResult Function(_AirQualityStateSuccess value) success,
-    required TResult Function(_AirQualityStateError value) error,
-    required TResult Function(_AirQualityFavoriteStateChanged value)
+    required TResult Function(_StationDetailsStateStateLoading value) loading,
+    required TResult Function(_StationDetailsStateStateSuccess value) success,
+    required TResult Function(_StationDetailsStateStateError value) error,
+    required TResult Function(_StationDetailsStateFavoriteStateChanged value)
         favoriteStateChanged,
   }) {
     return error(this);
@@ -488,10 +499,10 @@ class _$AirQualityStateErrorImpl implements _AirQualityStateError {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_AirQualityStateLoading value)? loading,
-    TResult? Function(_AirQualityStateSuccess value)? success,
-    TResult? Function(_AirQualityStateError value)? error,
-    TResult? Function(_AirQualityFavoriteStateChanged value)?
+    TResult? Function(_StationDetailsStateStateLoading value)? loading,
+    TResult? Function(_StationDetailsStateStateSuccess value)? success,
+    TResult? Function(_StationDetailsStateStateError value)? error,
+    TResult? Function(_StationDetailsStateFavoriteStateChanged value)?
         favoriteStateChanged,
   }) {
     return error?.call(this);
@@ -500,10 +511,10 @@ class _$AirQualityStateErrorImpl implements _AirQualityStateError {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_AirQualityStateLoading value)? loading,
-    TResult Function(_AirQualityStateSuccess value)? success,
-    TResult Function(_AirQualityStateError value)? error,
-    TResult Function(_AirQualityFavoriteStateChanged value)?
+    TResult Function(_StationDetailsStateStateLoading value)? loading,
+    TResult Function(_StationDetailsStateStateSuccess value)? success,
+    TResult Function(_StationDetailsStateStateError value)? error,
+    TResult Function(_StationDetailsStateFavoriteStateChanged value)?
         favoriteStateChanged,
     required TResult orElse(),
   }) {
@@ -514,34 +525,35 @@ class _$AirQualityStateErrorImpl implements _AirQualityStateError {
   }
 }
 
-abstract class _AirQualityStateError implements AirQualityState {
-  const factory _AirQualityStateError(final Exception error) =
-      _$AirQualityStateErrorImpl;
+abstract class _StationDetailsStateStateError implements StationDetailsState {
+  const factory _StationDetailsStateStateError(final Exception error) =
+      _$StationDetailsStateStateErrorImpl;
 
   Exception get error;
   @JsonKey(ignore: true)
-  _$$AirQualityStateErrorImplCopyWith<_$AirQualityStateErrorImpl>
+  _$$StationDetailsStateStateErrorImplCopyWith<
+          _$StationDetailsStateStateErrorImpl>
       get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$AirQualityFavoriteStateChangedImplCopyWith<$Res> {
-  factory _$$AirQualityFavoriteStateChangedImplCopyWith(
-          _$AirQualityFavoriteStateChangedImpl value,
-          $Res Function(_$AirQualityFavoriteStateChangedImpl) then) =
-      __$$AirQualityFavoriteStateChangedImplCopyWithImpl<$Res>;
+abstract class _$$StationDetailsStateFavoriteStateChangedImplCopyWith<$Res> {
+  factory _$$StationDetailsStateFavoriteStateChangedImplCopyWith(
+          _$StationDetailsStateFavoriteStateChangedImpl value,
+          $Res Function(_$StationDetailsStateFavoriteStateChangedImpl) then) =
+      __$$StationDetailsStateFavoriteStateChangedImplCopyWithImpl<$Res>;
   @useResult
   $Res call({bool isFavorite});
 }
 
 /// @nodoc
-class __$$AirQualityFavoriteStateChangedImplCopyWithImpl<$Res>
-    extends _$AirQualityStateCopyWithImpl<$Res,
-        _$AirQualityFavoriteStateChangedImpl>
-    implements _$$AirQualityFavoriteStateChangedImplCopyWith<$Res> {
-  __$$AirQualityFavoriteStateChangedImplCopyWithImpl(
-      _$AirQualityFavoriteStateChangedImpl _value,
-      $Res Function(_$AirQualityFavoriteStateChangedImpl) _then)
+class __$$StationDetailsStateFavoriteStateChangedImplCopyWithImpl<$Res>
+    extends _$StationDetailsStateCopyWithImpl<$Res,
+        _$StationDetailsStateFavoriteStateChangedImpl>
+    implements _$$StationDetailsStateFavoriteStateChangedImplCopyWith<$Res> {
+  __$$StationDetailsStateFavoriteStateChangedImplCopyWithImpl(
+      _$StationDetailsStateFavoriteStateChangedImpl _value,
+      $Res Function(_$StationDetailsStateFavoriteStateChangedImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -549,7 +561,7 @@ class __$$AirQualityFavoriteStateChangedImplCopyWithImpl<$Res>
   $Res call({
     Object? isFavorite = null,
   }) {
-    return _then(_$AirQualityFavoriteStateChangedImpl(
+    return _then(_$StationDetailsStateFavoriteStateChangedImpl(
       isFavorite: null == isFavorite
           ? _value.isFavorite
           : isFavorite // ignore: cast_nullable_to_non_nullable
@@ -560,23 +572,24 @@ class __$$AirQualityFavoriteStateChangedImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$AirQualityFavoriteStateChangedImpl
-    implements _AirQualityFavoriteStateChanged {
-  const _$AirQualityFavoriteStateChangedImpl({required this.isFavorite});
+class _$StationDetailsStateFavoriteStateChangedImpl
+    implements _StationDetailsStateFavoriteStateChanged {
+  const _$StationDetailsStateFavoriteStateChangedImpl(
+      {required this.isFavorite});
 
   @override
   final bool isFavorite;
 
   @override
   String toString() {
-    return 'AirQualityState.favoriteStateChanged(isFavorite: $isFavorite)';
+    return 'StationDetailsState.favoriteStateChanged(isFavorite: $isFavorite)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$AirQualityFavoriteStateChangedImpl &&
+            other is _$StationDetailsStateFavoriteStateChangedImpl &&
             (identical(other.isFavorite, isFavorite) ||
                 other.isFavorite == isFavorite));
   }
@@ -587,10 +600,11 @@ class _$AirQualityFavoriteStateChangedImpl
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$AirQualityFavoriteStateChangedImplCopyWith<
-          _$AirQualityFavoriteStateChangedImpl>
-      get copyWith => __$$AirQualityFavoriteStateChangedImplCopyWithImpl<
-          _$AirQualityFavoriteStateChangedImpl>(this, _$identity);
+  _$$StationDetailsStateFavoriteStateChangedImplCopyWith<
+          _$StationDetailsStateFavoriteStateChangedImpl>
+      get copyWith =>
+          __$$StationDetailsStateFavoriteStateChangedImplCopyWithImpl<
+              _$StationDetailsStateFavoriteStateChangedImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -632,10 +646,10 @@ class _$AirQualityFavoriteStateChangedImpl
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_AirQualityStateLoading value) loading,
-    required TResult Function(_AirQualityStateSuccess value) success,
-    required TResult Function(_AirQualityStateError value) error,
-    required TResult Function(_AirQualityFavoriteStateChanged value)
+    required TResult Function(_StationDetailsStateStateLoading value) loading,
+    required TResult Function(_StationDetailsStateStateSuccess value) success,
+    required TResult Function(_StationDetailsStateStateError value) error,
+    required TResult Function(_StationDetailsStateFavoriteStateChanged value)
         favoriteStateChanged,
   }) {
     return favoriteStateChanged(this);
@@ -644,10 +658,10 @@ class _$AirQualityFavoriteStateChangedImpl
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_AirQualityStateLoading value)? loading,
-    TResult? Function(_AirQualityStateSuccess value)? success,
-    TResult? Function(_AirQualityStateError value)? error,
-    TResult? Function(_AirQualityFavoriteStateChanged value)?
+    TResult? Function(_StationDetailsStateStateLoading value)? loading,
+    TResult? Function(_StationDetailsStateStateSuccess value)? success,
+    TResult? Function(_StationDetailsStateStateError value)? error,
+    TResult? Function(_StationDetailsStateFavoriteStateChanged value)?
         favoriteStateChanged,
   }) {
     return favoriteStateChanged?.call(this);
@@ -656,10 +670,10 @@ class _$AirQualityFavoriteStateChangedImpl
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_AirQualityStateLoading value)? loading,
-    TResult Function(_AirQualityStateSuccess value)? success,
-    TResult Function(_AirQualityStateError value)? error,
-    TResult Function(_AirQualityFavoriteStateChanged value)?
+    TResult Function(_StationDetailsStateStateLoading value)? loading,
+    TResult Function(_StationDetailsStateStateSuccess value)? success,
+    TResult Function(_StationDetailsStateStateError value)? error,
+    TResult Function(_StationDetailsStateFavoriteStateChanged value)?
         favoriteStateChanged,
     required TResult orElse(),
   }) {
@@ -670,13 +684,15 @@ class _$AirQualityFavoriteStateChangedImpl
   }
 }
 
-abstract class _AirQualityFavoriteStateChanged implements AirQualityState {
-  const factory _AirQualityFavoriteStateChanged(
-      {required final bool isFavorite}) = _$AirQualityFavoriteStateChangedImpl;
+abstract class _StationDetailsStateFavoriteStateChanged
+    implements StationDetailsState {
+  const factory _StationDetailsStateFavoriteStateChanged(
+          {required final bool isFavorite}) =
+      _$StationDetailsStateFavoriteStateChangedImpl;
 
   bool get isFavorite;
   @JsonKey(ignore: true)
-  _$$AirQualityFavoriteStateChangedImplCopyWith<
-          _$AirQualityFavoriteStateChangedImpl>
+  _$$StationDetailsStateFavoriteStateChangedImplCopyWith<
+          _$StationDetailsStateFavoriteStateChangedImpl>
       get copyWith => throw _privateConstructorUsedError;
 }

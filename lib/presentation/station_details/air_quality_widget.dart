@@ -1,4 +1,4 @@
-part of 'air_quality_page.dart';
+part of 'station_details_page.dart';
 
 class _AirQualityWidget extends StatelessWidget {
   const _AirQualityWidget({required this.quality, required this.isFavorite});
@@ -6,7 +6,7 @@ class _AirQualityWidget extends StatelessWidget {
   final bool isFavorite;
 
   void _onToggleFavorite(BuildContext context) {
-    context.read<AirQualityCubit>().onToggleFavorite(quality.cityId);
+    context.read<StationDetailsCubit>().onToggleFavorite(quality.cityId);
   }
 
   @override
