@@ -17,3 +17,7 @@ Air quality data is fetched from [WAQI API](https://aqicn.org/json-api/doc/)
 - Retrofit + Dio
 - Freezed
 - Hive
+
+## Screen recording
+https://github.com/jothaen/air_quality_app_flutter/assets/6339642/3eccba9b-f949-48e9-bd5f-eb1cb1002bc5
+
