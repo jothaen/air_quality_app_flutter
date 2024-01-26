@@ -25,10 +25,11 @@ class _MainPageState extends State<MainPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      bottomNavigationBar: _BottomBar(_onBottomTabChange),
+      bottomNavigationBar: _BottomBar(_currentIndex, _onBottomTabChange),
       backgroundColor: AppColors.lightBlue,
       appBar: AppBar(
         backgroundColor: AppColors.lightBlue,
+        surfaceTintColor: Colors.transparent,
         title: Text(context.i10n.airQuality),
       ),
       body: Stack(
@@ -52,12 +53,14 @@ class _MainPageState extends State<MainPage> {
 }
 
 class _BottomBar extends StatelessWidget {
-  const _BottomBar(this.onTabChange);
+  const _BottomBar(this.currentIndex, this.onTabChange);
+  final int currentIndex;
   final void Function(int) onTabChange;
 
   @override
   Widget build(BuildContext context) {
     return BottomNavigationBar(
+      currentIndex: currentIndex,
       onTap: onTabChange,
       items: [
         BottomNavigationBarItem(icon: const Icon(Icons.search), label: context.i10n.search),

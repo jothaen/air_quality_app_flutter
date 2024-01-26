@@ -13,25 +13,37 @@ class _ResultsWidget extends StatelessWidget {
         final city = results[index];
         return Padding(
           padding: const EdgeInsets.only(top: 8, left: 16, right: 16),
-          child: GestureDetector(
-            onTap: () => onResultTap.call(city.id),
-            child: Card(
-              surfaceTintColor: Colors.white,
-              elevation: 16,
+          child: Card(
+            clipBehavior: Clip.hardEdge,
+            surfaceTintColor: Colors.white,
+            elevation: 16,
+            child: InkWell(
+              onTap: () => onResultTap.call(city.id),
               child: Padding(
                 padding: const EdgeInsets.all(12),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
+                child: Row(
                   children: [
-                    Text(city.name, style: context.theme.textTheme.titleMedium),
-                    marginVertical8,
-                    Text(
-                      AirQualityValuesMapper.getMappedName(context, city.airQualityNamed),
-                      style: context.theme.textTheme.bodyLarge?.copyWith(fontWeight: FontWeight.w500),
+                    Expanded(
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(city.name,
+                              style: context.theme.textTheme.titleMedium?.copyWith(fontStyle: FontStyle.italic)),
+                          marginVertical8,
+                          Text(
+                            AirQualityValuesMapper.getMappedName(context, city.airQualityNamed),
+                            style: context.theme.textTheme.bodyLarge,
+                          ),
+                          Text(
+                            context.i10n.airQualityIndex(city.airQualityIndex),
+                            style: context.theme.textTheme.bodySmall,
+                          ),
+                        ],
+                      ),
                     ),
-                    Text(
-                      context.i10n.airQualityIndex(city.airQualityIndex),
-                      style: context.theme.textTheme.labelMedium,
+                    const Icon(
+                      Icons.chevron_right,
+                      color: Colors.grey,
                     ),
                   ],
                 ),

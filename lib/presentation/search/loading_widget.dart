@@ -7,7 +7,7 @@ class _LoadingWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return ListView.builder(
       itemCount: 5,
-      itemBuilder: (context, _) => const LoadingCard(),
+      itemBuilder: (context, _) => const LoadingCard(height: 110),
     );
   }
 }
