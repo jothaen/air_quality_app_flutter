@@ -15,6 +15,11 @@ class _ResultsWidget extends StatelessWidget {
           padding: const EdgeInsets.only(top: 8, left: 16, right: 16),
           child: Hero(
             tag: city.id,
+            flightShuttleBuilder: (_, __, ___, ____, toHeroContext) {
+              return SingleChildScrollView(
+                child: toHeroContext.widget,
+              );
+            },
             child: Card(
               clipBehavior: Clip.hardEdge,
               surfaceTintColor: Colors.white,
@@ -29,8 +34,10 @@ class _ResultsWidget extends StatelessWidget {
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            Text(city.name,
-                                style: context.theme.textTheme.titleMedium?.copyWith(fontStyle: FontStyle.italic)),
+                            Text(
+                              city.name,
+                              style: context.theme.textTheme.titleMedium?.copyWith(fontStyle: FontStyle.italic),
+                            ),
                             marginVertical8,
                             Text(
                               AirQualityValuesMapper.getMappedName(context, city.airQualityNamed),

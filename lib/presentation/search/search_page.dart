@@ -81,7 +81,10 @@ class _SearchPageState extends State<SearchPage> {
                           results: results.results,
                           onResultTap: (cityId) => _onResultTap(context, cityId),
                         ),
-                        noResults: (_) => const _NoResultsWidget(),
+                        noResults: (_) => const Align(
+                          alignment: Alignment.topCenter,
+                          child: _NoResultsWidget(),
+                        ),
                         error: (error) => _ErrorWidget(error: error.error),
                       ),
                     );

@@ -5,7 +5,18 @@ class _NoResultsWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // TODO(piotrek): enhance
-    return Text(context.i10n.noResults);
+    return Padding(
+      padding: const EdgeInsets.all(16),
+      child: Card(
+        surfaceTintColor: Colors.white,
+        color: Colors.white,
+        elevation: 16,
+        child: SizedBox(
+          height: 98,
+          width: double.infinity,
+          child: Center(child: Text(context.i10n.noResults)),
+        ),
+      ),
+    );
   }
 }

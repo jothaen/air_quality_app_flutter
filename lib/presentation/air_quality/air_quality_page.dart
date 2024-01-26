@@ -48,7 +48,7 @@ class AirQualityPage extends StatelessWidget {
                         child: AnimatedSwitcher(
                           duration: const Duration(milliseconds: 250),
                           child: state.map(
-                            loading: (_) => const LoadingCard(),
+                            loading: (_) => const LoadingCard(height: 250),
                             success: (success) => _AirQualityWidget(quality: success.quality),
                             error: (error) => _ErrorWidget(error: error.error),
                           ),
