@@ -100,6 +100,16 @@ class I10n {
     );
   }
 
+  /// `No results found.`
+  String get noResults {
+    return Intl.message(
+      'No results found.',
+      name: 'noResults',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Welcome to the Air Quality App`
   String get welcomeToTheAirQualityApp {
     return Intl.message(

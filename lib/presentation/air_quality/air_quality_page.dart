@@ -2,6 +2,7 @@ import 'package:air_quality_app/common/app_assets.dart';
 import 'package:air_quality_app/common/app_colors.dart';
 import 'package:air_quality_app/common/extensions/context_extensions.dart';
 import 'package:air_quality_app/common/gaps.dart';
+import 'package:air_quality_app/common/widgets/loading_card.dart';
 import 'package:air_quality_app/config/locator.dart';
 import 'package:air_quality_app/domain/model/air_quality.dart';
 import 'package:air_quality_app/presentation/air_quality/cubit/air_quality_cubit.dart';
@@ -9,11 +10,9 @@ import 'package:air_quality_app/presentation/air_quality/cubit/state/air_quality
 import 'package:air_quality_app/presentation/air_quality/util/air_quality_values_mapper.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:shimmer_animation/shimmer_animation.dart';
 
 part 'air_quality_widget.dart';
 part 'error_widget.dart';
-part 'loading_widget.dart';
 part 'welcome_widget.dart';
 
 class AirQualityPage extends StatefulWidget {
@@ -86,7 +85,7 @@ class _AirQualityPageState extends State<AirQualityPage> {
                               duration: const Duration(milliseconds: 250),
                               child: state.map(
                                 idle: (_) => const _WelcomeWidget(),
-                                loading: (_) => const _LoadingWidget(),
+                                loading: (_) => const LoadingCard(),
                                 success: (success) => _AirQualityWidget(quality: success.quality),
                                 error: (error) => _ErrorWidget(error: error.error),
                               ),

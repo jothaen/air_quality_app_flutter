@@ -4,6 +4,7 @@
     "enterThePlaceName": "Enter the place name",
     "search": "Search",
     "favorites": "Favorites",
+    "noResults": "No results found.",
     "welcomeToTheAirQualityApp": "Welcome to the Air Quality App",
     "useTheSearchBarToFindPlace": "Use the search bar above to find the information about the air quality in your place!",
     "somethingWentWrong": "Something went wrong 😔",

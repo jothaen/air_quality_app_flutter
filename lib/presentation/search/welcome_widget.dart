@@ -5,16 +5,19 @@ class _WelcomeWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        marginVertical48,
-        Text(context.i10n.welcomeToTheAirQualityApp),
-        marginVertical12,
-        Text(
-          context.i10n.useTheSearchBarToFindPlace,
-          textAlign: TextAlign.center,
-        ),
-      ],
+    return Padding(
+      padding: const EdgeInsets.all(16),
+      child: Column(
+        children: [
+          marginVertical24,
+          Text(context.i10n.welcomeToTheAirQualityApp),
+          marginVertical12,
+          Text(
+            context.i10n.useTheSearchBarToFindPlace,
+            textAlign: TextAlign.center,
+          ),
+        ],
+      ),
     );
   }
 }

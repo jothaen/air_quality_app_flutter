@@ -3,6 +3,7 @@ import 'package:air_quality_app/common/app_colors.dart';
 import 'package:air_quality_app/common/extensions/context_extensions.dart';
 import 'package:air_quality_app/config/locator.dart';
 import 'package:air_quality_app/presentation/air_quality/cubit/air_quality_cubit.dart';
+import 'package:air_quality_app/presentation/search/cubit/search_cubit.dart';
 import 'package:air_quality_app/presentation/search/search_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -16,7 +17,6 @@ class MainPage extends StatefulWidget {
 
 class _MainPageState extends State<MainPage> {
   static const _indexSearch = 0;
-  static const _indexFavorites = 1;
 
   int _currentIndex = 0;
 
@@ -28,8 +28,11 @@ class _MainPageState extends State<MainPage> {
 
   @override
   Widget build(BuildContext context) {
-    return BlocProvider<AirQualityCubit>(
-      create: (context) => locator.get<AirQualityCubit>(),
+    return MultiBlocProvider(
+      providers: [
+        BlocProvider<AirQualityCubit>(create: (context) => locator.get<AirQualityCubit>()),
+        BlocProvider<SearchCubit>(create: (context) => locator.get<SearchCubit>()),
+      ],
       child: Scaffold(
         bottomNavigationBar: _BottomBar(_onBottomTabChange),
         backgroundColor: AppColors.lightBlue,

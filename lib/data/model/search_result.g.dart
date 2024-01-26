@@ -7,14 +7,14 @@ part of 'search_result.dart';
 // **************************************************************************
 
 SearchResult _$SearchResultFromJson(Map<String, dynamic> json) => SearchResult(
-      json['idx'] as int,
-      json['aqi'] as int,
-      City.fromJson(json['city'] as Map<String, dynamic>),
+      json['uid'] as int,
+      json['aqi'] as String,
+      City.fromJson(json['station'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$SearchResultToJson(SearchResult instance) =>
     <String, dynamic>{
-      'idx': instance.cityId,
+      'uid': instance.cityId,
       'aqi': instance.aqi,
-      'city': instance.city,
+      'station': instance.city,
     };

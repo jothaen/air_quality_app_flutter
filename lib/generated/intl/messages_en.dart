@@ -40,6 +40,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "favorites": MessageLookupByLibrary.simpleMessage("Favorites"),
         "genericErrorDescription": MessageLookupByLibrary.simpleMessage(
             "Probably we could not find any station for a given place name. Try again"),
+        "noResults": MessageLookupByLibrary.simpleMessage("No results found."),
         "search": MessageLookupByLibrary.simpleMessage("Search"),
         "somethingWentWrong":
             MessageLookupByLibrary.simpleMessage("Something went wrong 😔"),

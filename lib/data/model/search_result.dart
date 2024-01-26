@@ -8,9 +8,10 @@ class SearchResult {
   const SearchResult(this.cityId, this.aqi, this.city);
 
   factory SearchResult.fromJson(Map<String, dynamic> json) => _$SearchResultFromJson(json);
-  @JsonKey(name: 'idx')
+  @JsonKey(name: 'uid')
   final int cityId;
-  final int aqi;
+  final String aqi;
+  @JsonKey(name: 'station')
   final City city;
 
   Map<String, dynamic> toJson() => _$SearchResultToJson(this);

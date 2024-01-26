@@ -1,16 +1,17 @@
 import 'package:air_quality_app/common/extensions/context_extensions.dart';
 import 'package:air_quality_app/common/gaps.dart';
-import 'package:air_quality_app/domain/model/air_quality.dart';
-import 'package:air_quality_app/presentation/air_quality/cubit/air_quality_cubit.dart';
-import 'package:air_quality_app/presentation/air_quality/cubit/state/air_quality_state.dart';
+import 'package:air_quality_app/common/widgets/loading_card.dart';
+import 'package:air_quality_app/domain/model/city_search_result.dart';
 import 'package:air_quality_app/presentation/air_quality/util/air_quality_values_mapper.dart';
+import 'package:air_quality_app/presentation/search/cubit/search_cubit.dart';
+import 'package:air_quality_app/presentation/search/cubit/state/search_state.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:shimmer_animation/shimmer_animation.dart';
 
-part 'air_quality_widget.dart';
 part 'error_widget.dart';
 part 'loading_widget.dart';
+part 'no_results_widget.dart';
+part 'results_widget.dart';
 part 'welcome_widget.dart';
 
 class SearchPage extends StatefulWidget {
@@ -32,16 +33,16 @@ class _SearchPageState extends State<SearchPage> {
   String get _searchQuery => _searchController.text.trim();
 
   Future<void> _onSearch(BuildContext context) {
-    return context.read<AirQualityCubit>().onSearch(_searchQuery);
+    return context.read<SearchCubit>().onSearch(_searchQuery);
   }
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.all(16),
-      child: Column(
-        children: [
-          Row(
+    return Column(
+      children: [
+        Padding(
+          padding: const EdgeInsets.all(16),
+          child: Row(
             children: [
               Expanded(
                 child: TextFormField(
@@ -56,25 +57,24 @@ class _SearchPageState extends State<SearchPage> {
               ),
             ],
           ),
-          Expanded(
-            child: SingleChildScrollView(
-              child: BlocBuilder<AirQualityCubit, AirQualityState>(
-                builder: (context, state) {
-                  return AnimatedSwitcher(
-                    duration: const Duration(milliseconds: 250),
-                    child: state.map(
-                      idle: (_) => const _WelcomeWidget(),
-                      loading: (_) => const _LoadingWidget(),
-                      success: (success) => _AirQualityWidget(quality: success.quality),
-                      error: (error) => _ErrorWidget(error: error.error),
-                    ),
-                  );
-                },
-              ),
-            ),
+        ),
+        Expanded(
+          child: BlocBuilder<SearchCubit, SearchState>(
+            builder: (context, state) {
+              return AnimatedSwitcher(
+                duration: const Duration(milliseconds: 250),
+                child: state.map(
+                  idle: (_) => const _WelcomeWidget(),
+                  loading: (_) => const _LoadingWidget(),
+                  results: (results) => _ResultsWidget(results: results.results),
+                  noResults: (_) => const _NoResultsWidget(),
+                  error: (error) => _ErrorWidget(error: error.error),
+                ),
+              );
+            },
           ),
-        ],
-      ),
+        ),
+      ],
     );
   }
 }
