@@ -37,6 +37,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Very Poor 😠"),
         "enterThePlaceName":
             MessageLookupByLibrary.simpleMessage("Enter the place name"),
+        "favorites": MessageLookupByLibrary.simpleMessage("Favorites"),
         "genericErrorDescription": MessageLookupByLibrary.simpleMessage(
             "Probably we could not find any station for a given place name. Try again"),
         "search": MessageLookupByLibrary.simpleMessage("Search"),

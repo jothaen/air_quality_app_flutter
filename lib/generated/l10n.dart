@@ -90,6 +90,16 @@ class I10n {
     );
   }
 
+  /// `Favorites`
+  String get favorites {
+    return Intl.message(
+      'Favorites',
+      name: 'favorites',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Welcome to the Air Quality App`
   String get welcomeToTheAirQualityApp {
     return Intl.message(
