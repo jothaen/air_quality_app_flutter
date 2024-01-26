@@ -1,18 +1,14 @@
 import 'package:air_quality_app/common/app_assets.dart';
 import 'package:air_quality_app/common/app_colors.dart';
 import 'package:air_quality_app/common/extensions/context_extensions.dart';
-import 'package:air_quality_app/common/gaps.dart';
+import 'package:air_quality_app/common/widgets/air_quality_card.dart';
 import 'package:air_quality_app/common/widgets/error_card.dart';
 import 'package:air_quality_app/common/widgets/loading_card.dart';
 import 'package:air_quality_app/config/locator.dart';
-import 'package:air_quality_app/domain/model/air_quality.dart';
 import 'package:air_quality_app/presentation/station_details/cubit/state/station_details_state.dart';
 import 'package:air_quality_app/presentation/station_details/cubit/station_details_cubit.dart';
-import 'package:air_quality_app/presentation/station_details/util/air_quality_values_mapper.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-
-part 'air_quality_widget.dart';
 
 class StationDetailsPage extends StatelessWidget {
   const StationDetailsPage(this.cityId, {super.key});
@@ -24,6 +20,10 @@ class StationDetailsPage extends StatelessWidget {
         favoriteState.isFavorite ? context.i10n.addedToFavorites : context.i10n.removedFromFavorites,
       ),
     );
+  }
+
+  void _onToggleFavorite(BuildContext context, int cityId) {
+    context.read<StationDetailsCubit>().onToggleFavorite(cityId);
   }
 
   @override
@@ -58,9 +58,11 @@ class StationDetailsPage extends StatelessWidget {
                           duration: const Duration(milliseconds: 250),
                           child: state.maybeMap(
                             loading: (_) => const LoadingCard(height: 250),
-                            success: (success) => _AirQualityWidget(
+                            success: (success) => AirQualityCard(
                               quality: success.quality,
                               isFavorite: success.isFavorite,
+                              showFavoritesButton: true,
+                              onFavoriteTap: (cityId) => _onToggleFavorite(context, cityId),
                             ),
                             error: (error) => const ErrorCard(),
                             orElse: () => const SizedBox(),

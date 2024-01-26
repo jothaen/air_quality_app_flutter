@@ -1,13 +1,23 @@
-part of 'station_details_page.dart';
+import 'package:air_quality_app/common/extensions/context_extensions.dart';
+import 'package:air_quality_app/common/gaps.dart';
+import 'package:air_quality_app/domain/model/air_quality.dart';
+import 'package:air_quality_app/presentation/station_details/util/air_quality_values_mapper.dart';
+import 'package:flutter/material.dart';
 
-class _AirQualityWidget extends StatelessWidget {
-  const _AirQualityWidget({required this.quality, required this.isFavorite});
+typedef OnFavoriteTap = void Function(int);
+
+class AirQualityCard extends StatelessWidget {
+  const AirQualityCard({
+    required this.quality,
+    this.isFavorite = false,
+    this.showFavoritesButton = false,
+    this.onFavoriteTap,
+    super.key,
+  });
   final AirQuality quality;
   final bool isFavorite;
-
-  void _onToggleFavorite(BuildContext context) {
-    context.read<StationDetailsCubit>().onToggleFavorite(quality.cityId);
-  }
+  final bool showFavoritesButton;
+  final OnFavoriteTap? onFavoriteTap;
 
   @override
   Widget build(BuildContext context) {
@@ -44,13 +54,15 @@ class _AirQualityWidget extends StatelessWidget {
                   _PollutantsWidget(
                     pollutants: quality.pollutionData,
                   ),
-                  Align(
-                    alignment: Alignment.centerLeft,
-                    child: _FavoritesButton(
-                      isFavorite: isFavorite,
-                      onTap: () => _onToggleFavorite(context),
+                  if (showFavoritesButton) ...[
+                    Align(
+                      alignment: Alignment.centerLeft,
+                      child: _FavoritesButton(
+                        isFavorite: isFavorite,
+                        onTap: () => onFavoriteTap?.call(quality.cityId),
+                      ),
                     ),
-                  ),
+                  ],
                 ],
               ),
             ),

@@ -19,7 +19,22 @@ class FavoritesCubit extends Cubit<FavoritesState> {
     try {
       final favoritesIds = await _favoritesRepository.getAllFavoritesIds();
       final favorites = await Future.wait(favoritesIds.map((id) => _airQualityRepository.getAirQuality('@$id')));
-      safeEmit(FavoritesState.success(favorites));
+      if (favorites.isNotEmpty) {
+        safeEmit(FavoritesState.success(favorites));
+      } else {
+        safeEmit(const FavoritesState.empty());
+      }
+    } catch (e) {
+      debugPrint(e.toString());
+      safeEmit(FavoritesState.error(Exception('Something went wrong')));
+    }
+  }
+
+  Future<void> onRemoveFromFavorites(int cityId) async {
+    safeEmit(const FavoritesState.loading());
+    try {
+      await _favoritesRepository.removeFromFavorites(cityId);
+      await onInit();
     } catch (e) {
       debugPrint(e.toString());
       safeEmit(FavoritesState.error(Exception('Something went wrong')));
