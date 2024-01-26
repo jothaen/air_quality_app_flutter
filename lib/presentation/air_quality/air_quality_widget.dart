@@ -6,42 +6,44 @@ class _AirQualityWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.stretch,
-      children: [
-        marginVertical16,
-        Card(
-          surfaceTintColor: Colors.white,
-          elevation: 16,
-          child: Padding(
-            padding: const EdgeInsets.all(16),
-            child: Column(
-              children: [
-                Text(
-                  quality.locationName,
-                  textAlign: TextAlign.center,
-                  style: context.theme.textTheme.bodySmall,
-                ),
-                Text(
-                  quality.dateTime,
-                  style: context.theme.textTheme.bodySmall,
-                ),
-                marginVertical16,
-                Text(
-                  AirQualityValuesMapper.getMappedName(context, quality.airQualityNamed),
-                  style: context.theme.textTheme.displaySmall?.copyWith(),
-                ),
-                marginVertical2,
-                Text(context.i10n.airQualityIndex(quality.airQualityIndex)),
-                marginVertical16,
-                _PollutantsWidget(
-                  pollutants: quality.pollutionData,
-                ),
-              ],
+    return Padding(
+      padding: const EdgeInsets.only(top: 8, left: 16, right: 16),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: [
+          Card(
+            surfaceTintColor: Colors.white,
+            elevation: 16,
+            child: Padding(
+              padding: const EdgeInsets.all(16),
+              child: Column(
+                children: [
+                  Text(
+                    quality.locationName,
+                    textAlign: TextAlign.center,
+                    style: context.theme.textTheme.bodySmall,
+                  ),
+                  Text(
+                    quality.dateTime,
+                    style: context.theme.textTheme.bodySmall,
+                  ),
+                  marginVertical16,
+                  Text(
+                    AirQualityValuesMapper.getMappedName(context, quality.airQualityNamed),
+                    style: context.theme.textTheme.displaySmall?.copyWith(),
+                  ),
+                  marginVertical2,
+                  Text(context.i10n.airQualityIndex(quality.airQualityIndex)),
+                  marginVertical16,
+                  _PollutantsWidget(
+                    pollutants: quality.pollutionData,
+                  ),
+                ],
+              ),
             ),
           ),
-        ),
-      ],
+        ],
+      ),
     );
   }
 }
@@ -54,7 +56,7 @@ class _PollutantsWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 96),
+      padding: const EdgeInsets.symmetric(horizontal: 16),
       child: Column(children: pollutants.map(_PollutantRow.new).toList()),
     );
   }
@@ -71,7 +73,7 @@ class _PollutantRow extends StatelessWidget {
       children: [
         Text(pollutionData.name),
         const Spacer(),
-        marginHorizontal2,
+        marginHorizontal48,
         Column(
           crossAxisAlignment: CrossAxisAlignment.end,
           children: [

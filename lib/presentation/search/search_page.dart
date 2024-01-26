@@ -1,7 +1,10 @@
 import 'package:air_quality_app/common/extensions/context_extensions.dart';
 import 'package:air_quality_app/common/gaps.dart';
 import 'package:air_quality_app/common/widgets/loading_card.dart';
+import 'package:air_quality_app/config/app_route.dart';
+import 'package:air_quality_app/config/locator.dart';
 import 'package:air_quality_app/domain/model/city_search_result.dart';
+import 'package:air_quality_app/presentation/air_quality/air_quality_page.dart';
 import 'package:air_quality_app/presentation/air_quality/util/air_quality_values_mapper.dart';
 import 'package:air_quality_app/presentation/search/cubit/search_cubit.dart';
 import 'package:air_quality_app/presentation/search/cubit/state/search_state.dart';
@@ -36,45 +39,59 @@ class _SearchPageState extends State<SearchPage> {
     return context.read<SearchCubit>().onSearch(_searchQuery);
   }
 
+  void _onResultTap(BuildContext context, int cityId) {
+    context.nav.pushNamed(AppRoute.cityDetails, arguments: AirQualityPageArgs(cityId));
+  }
+
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        Padding(
-          padding: const EdgeInsets.all(16),
-          child: Row(
+    return BlocProvider<SearchCubit>(
+      create: (context) => locator.get<SearchCubit>(),
+      child: Builder(
+        builder: (context) {
+          return Column(
             children: [
-              Expanded(
-                child: TextFormField(
-                  controller: _searchController,
-                  decoration: InputDecoration(hintText: context.i10n.enterThePlaceName),
+              Padding(
+                padding: const EdgeInsets.all(16),
+                child: Row(
+                  children: [
+                    Expanded(
+                      child: TextFormField(
+                        controller: _searchController,
+                        decoration: InputDecoration(hintText: context.i10n.enterThePlaceName),
+                      ),
+                    ),
+                    TextButton.icon(
+                      onPressed: () => _onSearch(context),
+                      icon: const Icon(Icons.search),
+                      label: Text(context.i10n.search),
+                    ),
+                  ],
                 ),
               ),
-              TextButton.icon(
-                onPressed: () => _onSearch(context),
-                icon: const Icon(Icons.search),
-                label: Text(context.i10n.search),
+              Expanded(
+                child: BlocBuilder<SearchCubit, SearchState>(
+                  builder: (context, state) {
+                    return AnimatedSwitcher(
+                      duration: const Duration(milliseconds: 250),
+                      child: state.map(
+                        idle: (_) => const _WelcomeWidget(),
+                        loading: (_) => const _LoadingWidget(),
+                        results: (results) => _ResultsWidget(
+                          results: results.results,
+                          onResultTap: (cityId) => _onResultTap(context, cityId),
+                        ),
+                        noResults: (_) => const _NoResultsWidget(),
+                        error: (error) => _ErrorWidget(error: error.error),
+                      ),
+                    );
+                  },
+                ),
               ),
             ],
-          ),
-        ),
-        Expanded(
-          child: BlocBuilder<SearchCubit, SearchState>(
-            builder: (context, state) {
-              return AnimatedSwitcher(
-                duration: const Duration(milliseconds: 250),
-                child: state.map(
-                  idle: (_) => const _WelcomeWidget(),
-                  loading: (_) => const _LoadingWidget(),
-                  results: (results) => _ResultsWidget(results: results.results),
-                  noResults: (_) => const _NoResultsWidget(),
-                  error: (error) => _ErrorWidget(error: error.error),
-                ),
-              );
-            },
-          ),
-        ),
-      ],
+          );
+        },
+      ),
     );
   }
 }

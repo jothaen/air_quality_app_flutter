@@ -5,7 +5,6 @@ part 'air_quality_state.freezed.dart';
 
 @freezed
 abstract class AirQualityState with _$AirQualityState {
-  const factory AirQualityState.idle() = _AirQualityStateIdle;
   const factory AirQualityState.loading() = _AirQualityStateLoading;
   const factory AirQualityState.success(AirQuality quality) = _AirQualityStateSuccess;
   const factory AirQualityState.error(Exception error) = _AirQualityStateError;

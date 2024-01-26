@@ -15,92 +15,57 @@ part 'air_quality_widget.dart';
 part 'error_widget.dart';
 part 'welcome_widget.dart';
 
-class AirQualityPage extends StatefulWidget {
-  const AirQualityPage({super.key});
-
-  @override
-  State<AirQualityPage> createState() => _AirQualityPageState();
-}
-
-class _AirQualityPageState extends State<AirQualityPage> {
-  final _searchController = TextEditingController();
-
-  @override
-  void dispose() {
-    _searchController.dispose();
-    super.dispose();
-  }
-
-  String get _searchQuery => _searchController.text.trim();
-
-  Future<void> _onSearch(BuildContext context) {
-    return context.read<AirQualityCubit>().onSearch(_searchQuery);
-  }
+class AirQualityPage extends StatelessWidget {
+  const AirQualityPage(this.cityId, {super.key});
+  final int cityId;
 
   @override
   Widget build(BuildContext context) {
-    return BlocProvider<AirQualityCubit>(
-      create: (context) => locator.get<AirQualityCubit>(),
+    return BlocProvider(
+      create: (context) => locator.get<AirQualityCubit>()..onInit(cityId),
       child: Builder(
-        builder: (context) => Scaffold(
-          backgroundColor: AppColors.lightBlue,
-          appBar: AppBar(
+        builder: (context) {
+          return Scaffold(
+            appBar: AppBar(
+              title: Text(context.i10n.airQuality),
+              backgroundColor: AppColors.lightBlue,
+            ),
             backgroundColor: AppColors.lightBlue,
-            title: Text(context.i10n.airQuality),
-          ),
-          body: Stack(
-            children: [
-              Align(
-                alignment: Alignment.bottomCenter,
-                child: Image.asset(
-                  AppAssets.imageCity,
-                  height: 450,
-                  fit: BoxFit.fitHeight,
+            body: Stack(
+              children: [
+                Align(
+                  alignment: Alignment.bottomCenter,
+                  child: Image.asset(
+                    AppAssets.imageCity,
+                    height: 450,
+                    fit: BoxFit.fitHeight,
+                  ),
                 ),
-              ),
-              Padding(
-                padding: const EdgeInsets.all(16),
-                child: Column(
-                  children: [
-                    Row(
-                      children: [
-                        Expanded(
-                          child: TextFormField(
-                            controller: _searchController,
-                            decoration: InputDecoration(hintText: context.i10n.enterThePlaceName),
-                          ),
+                SingleChildScrollView(
+                  child: BlocBuilder<AirQualityCubit, AirQualityState>(
+                    builder: (context, state) {
+                      return AnimatedSwitcher(
+                        duration: const Duration(milliseconds: 250),
+                        child: state.map(
+                          loading: (_) => const LoadingCard(),
+                          success: (success) => _AirQualityWidget(quality: success.quality),
+                          error: (error) => _ErrorWidget(error: error.error),
                         ),
-                        TextButton.icon(
-                          onPressed: () => _onSearch(context),
-                          icon: const Icon(Icons.search),
-                          label: Text(context.i10n.search),
-                        ),
-                      ],
-                    ),
-                    Expanded(
-                      child: SingleChildScrollView(
-                        child: BlocBuilder<AirQualityCubit, AirQualityState>(
-                          builder: (context, state) {
-                            return AnimatedSwitcher(
-                              duration: const Duration(milliseconds: 250),
-                              child: state.map(
-                                idle: (_) => const _WelcomeWidget(),
-                                loading: (_) => const LoadingCard(),
-                                success: (success) => _AirQualityWidget(quality: success.quality),
-                                error: (error) => _ErrorWidget(error: error.error),
-                              ),
-                            );
-                          },
-                        ),
-                      ),
-                    ),
-                  ],
+                      );
+                    },
+                  ),
                 ),
-              ),
-            ],
-          ),
-        ),
+              ],
+            ),
+          );
+        },
       ),
     );
   }
+}
+
+class AirQualityPageArgs {
+  AirQualityPageArgs(this.cityId);
+
+  final int cityId;
 }
