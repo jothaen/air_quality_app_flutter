@@ -8,6 +8,7 @@ part of 'air_quality_data.dart';
 
 AirQualityData _$AirQualityDataFromJson(Map<String, dynamic> json) =>
     AirQualityData(
+      json['idx'] as int,
       json['aqi'] as int,
       City.fromJson(json['city'] as Map<String, dynamic>),
       ResponseTime.fromJson(json['time'] as Map<String, dynamic>),
@@ -16,6 +17,7 @@ AirQualityData _$AirQualityDataFromJson(Map<String, dynamic> json) =>
 
 Map<String, dynamic> _$AirQualityDataToJson(AirQualityData instance) =>
     <String, dynamic>{
+      'idx': instance.cityId,
       'aqi': instance.aqi,
       'city': instance.city,
       'time': instance.time,

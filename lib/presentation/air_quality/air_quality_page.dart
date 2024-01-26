@@ -43,12 +43,15 @@ class AirQualityPage extends StatelessWidget {
                 SingleChildScrollView(
                   child: BlocBuilder<AirQualityCubit, AirQualityState>(
                     builder: (context, state) {
-                      return AnimatedSwitcher(
-                        duration: const Duration(milliseconds: 250),
-                        child: state.map(
-                          loading: (_) => const LoadingCard(),
-                          success: (success) => _AirQualityWidget(quality: success.quality),
-                          error: (error) => _ErrorWidget(error: error.error),
+                      return Hero(
+                        tag: cityId,
+                        child: AnimatedSwitcher(
+                          duration: const Duration(milliseconds: 250),
+                          child: state.map(
+                            loading: (_) => const LoadingCard(),
+                            success: (success) => _AirQualityWidget(quality: success.quality),
+                            error: (error) => _ErrorWidget(error: error.error),
+                          ),
                         ),
                       );
                     },

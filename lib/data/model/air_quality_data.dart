@@ -7,10 +7,12 @@ part 'air_quality_data.g.dart';
 
 @JsonSerializable()
 class AirQualityData {
-  AirQualityData(this.aqi, this.city, this.time, this.sensorsData);
+  AirQualityData(this.cityId, this.aqi, this.city, this.time, this.sensorsData);
 
   factory AirQualityData.fromJson(Map<String, dynamic> json) => _$AirQualityDataFromJson(json);
 
+  @JsonKey(name: 'idx')
+  final int cityId;
   final int aqi;
   final City city;
   final ResponseTime time;

@@ -9,6 +9,7 @@ class AirQualityMapper {
 
   static AirQuality map(AirQualityData data) {
     return AirQuality(
+      data.cityId,
       data.time.timeString,
       data.city.name,
       data.aqi,
