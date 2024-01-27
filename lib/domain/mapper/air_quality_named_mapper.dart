@@ -1,4 +1,4 @@
-import 'package:air_quality_app/domain/model/air_quality.dart';
+import 'package:air_quality_app/domain/model/air_quality_named.dart';
 
 class AirQualityNamedMapper {
   AirQualityNamedMapper._();

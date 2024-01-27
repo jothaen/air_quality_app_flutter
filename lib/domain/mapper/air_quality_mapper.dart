@@ -3,6 +3,8 @@ import 'package:air_quality_app/data/dto/sensor_value_dto.dart';
 import 'package:air_quality_app/data/dto/sensors_data_dto.dart';
 import 'package:air_quality_app/domain/mapper/air_quality_named_mapper.dart';
 import 'package:air_quality_app/domain/model/air_quality.dart';
+import 'package:air_quality_app/domain/model/pollutant.dart';
+import 'package:air_quality_app/domain/model/pollution_data.dart';
 
 class AirQualityMapper {
   AirQualityMapper._();
