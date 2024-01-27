@@ -1,21 +1,21 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'air_quality_data.dart';
+part of 'air_quality_data_dto.dart';
 
 // **************************************************************************
 // JsonSerializableGenerator
 // **************************************************************************
 
-AirQualityData _$AirQualityDataFromJson(Map<String, dynamic> json) =>
-    AirQualityData(
+AirQualityDataDto _$AirQualityDataDtoFromJson(Map<String, dynamic> json) =>
+    AirQualityDataDto(
       json['idx'] as int,
       json['aqi'] as int,
-      City.fromJson(json['city'] as Map<String, dynamic>),
-      ResponseTime.fromJson(json['time'] as Map<String, dynamic>),
-      SensorsData.fromJson(json['iaqi'] as Map<String, dynamic>),
+      CityDto.fromJson(json['city'] as Map<String, dynamic>),
+      ResponseTimeDto.fromJson(json['time'] as Map<String, dynamic>),
+      SensorsDataDto.fromJson(json['iaqi'] as Map<String, dynamic>),
     );
 
-Map<String, dynamic> _$AirQualityDataToJson(AirQualityData instance) =>
+Map<String, dynamic> _$AirQualityDataDtoToJson(AirQualityDataDto instance) =>
     <String, dynamic>{
       'idx': instance.cityId,
       'aqi': instance.aqi,

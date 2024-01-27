@@ -21,7 +21,7 @@ class _AirQualityApi implements AirQualityApi {
   String? baseUrl;
 
   @override
-  Future<AirQualityResponse> getAirQuality(
+  Future<AirQualityResponseDto> getAirQuality(
     String city,
     String key,
   ) async {
@@ -29,8 +29,8 @@ class _AirQualityApi implements AirQualityApi {
     final queryParameters = <String, dynamic>{r'token': key};
     final _headers = <String, dynamic>{};
     final Map<String, dynamic>? _data = null;
-    final _result = await _dio
-        .fetch<Map<String, dynamic>>(_setStreamType<AirQualityResponse>(Options(
+    final _result = await _dio.fetch<Map<String, dynamic>>(
+        _setStreamType<AirQualityResponseDto>(Options(
       method: 'GET',
       headers: _headers,
       extra: _extra,
@@ -46,12 +46,12 @@ class _AirQualityApi implements AirQualityApi {
               _dio.options.baseUrl,
               baseUrl,
             ))));
-    final value = AirQualityResponse.fromJson(_result.data!);
+    final value = AirQualityResponseDto.fromJson(_result.data!);
     return value;
   }
 
   @override
-  Future<SearchResponse> searchForCity(
+  Future<SearchResponseDto> searchForCity(
     String query,
     String key,
   ) async {
@@ -63,7 +63,7 @@ class _AirQualityApi implements AirQualityApi {
     final _headers = <String, dynamic>{};
     final Map<String, dynamic>? _data = null;
     final _result = await _dio
-        .fetch<Map<String, dynamic>>(_setStreamType<SearchResponse>(Options(
+        .fetch<Map<String, dynamic>>(_setStreamType<SearchResponseDto>(Options(
       method: 'GET',
       headers: _headers,
       extra: _extra,
@@ -79,7 +79,7 @@ class _AirQualityApi implements AirQualityApi {
               _dio.options.baseUrl,
               baseUrl,
             ))));
-    final value = SearchResponse.fromJson(_result.data!);
+    final value = SearchResponseDto.fromJson(_result.data!);
     return value;
   }
 

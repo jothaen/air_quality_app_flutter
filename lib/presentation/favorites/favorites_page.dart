@@ -23,7 +23,7 @@ class FavoritesPage extends StatelessWidget {
             builder: (context, state) {
               return state.map(
                 loading: (_) => const LoadingList(listItemHeight: 250),
-                success: (success) => _FavoritesList(success.results),
+                success: (success) => _FavoritesList(success.favorites),
                 empty: (_) => EmptyResultsCard(context.i10n.noFavorites),
                 error: (error) => const ErrorCard(),
               );

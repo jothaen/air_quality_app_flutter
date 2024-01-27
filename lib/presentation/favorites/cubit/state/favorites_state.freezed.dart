@@ -19,7 +19,7 @@ mixin _$FavoritesState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() loading,
-    required TResult Function(List<AirQuality> results) success,
+    required TResult Function(List<AirQuality> favorites) success,
     required TResult Function() empty,
     required TResult Function(Exception error) error,
   }) =>
@@ -27,7 +27,7 @@ mixin _$FavoritesState {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? loading,
-    TResult? Function(List<AirQuality> results)? success,
+    TResult? Function(List<AirQuality> favorites)? success,
     TResult? Function()? empty,
     TResult? Function(Exception error)? error,
   }) =>
@@ -35,7 +35,7 @@ mixin _$FavoritesState {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? loading,
-    TResult Function(List<AirQuality> results)? success,
+    TResult Function(List<AirQuality> favorites)? success,
     TResult Function()? empty,
     TResult Function(Exception error)? error,
     required TResult orElse(),
@@ -127,7 +127,7 @@ class _$FavoritesStateLoadingImpl implements _FavoritesStateLoading {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() loading,
-    required TResult Function(List<AirQuality> results) success,
+    required TResult Function(List<AirQuality> favorites) success,
     required TResult Function() empty,
     required TResult Function(Exception error) error,
   }) {
@@ -138,7 +138,7 @@ class _$FavoritesStateLoadingImpl implements _FavoritesStateLoading {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? loading,
-    TResult? Function(List<AirQuality> results)? success,
+    TResult? Function(List<AirQuality> favorites)? success,
     TResult? Function()? empty,
     TResult? Function(Exception error)? error,
   }) {
@@ -149,7 +149,7 @@ class _$FavoritesStateLoadingImpl implements _FavoritesStateLoading {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? loading,
-    TResult Function(List<AirQuality> results)? success,
+    TResult Function(List<AirQuality> favorites)? success,
     TResult Function()? empty,
     TResult Function(Exception error)? error,
     required TResult orElse(),
@@ -209,7 +209,7 @@ abstract class _$$FavoritesStateResultsImplCopyWith<$Res> {
           $Res Function(_$FavoritesStateResultsImpl) then) =
       __$$FavoritesStateResultsImplCopyWithImpl<$Res>;
   @useResult
-  $Res call({List<AirQuality> results});
+  $Res call({List<AirQuality> favorites});
 }
 
 /// @nodoc
@@ -223,12 +223,12 @@ class __$$FavoritesStateResultsImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? results = null,
+    Object? favorites = null,
   }) {
     return _then(_$FavoritesStateResultsImpl(
-      null == results
-          ? _value._results
-          : results // ignore: cast_nullable_to_non_nullable
+      null == favorites
+          ? _value._favorites
+          : favorites // ignore: cast_nullable_to_non_nullable
               as List<AirQuality>,
     ));
   }
@@ -237,20 +237,20 @@ class __$$FavoritesStateResultsImplCopyWithImpl<$Res>
 /// @nodoc
 
 class _$FavoritesStateResultsImpl implements _FavoritesStateResults {
-  const _$FavoritesStateResultsImpl(final List<AirQuality> results)
-      : _results = results;
+  const _$FavoritesStateResultsImpl(final List<AirQuality> favorites)
+      : _favorites = favorites;
 
-  final List<AirQuality> _results;
+  final List<AirQuality> _favorites;
   @override
-  List<AirQuality> get results {
-    if (_results is EqualUnmodifiableListView) return _results;
+  List<AirQuality> get favorites {
+    if (_favorites is EqualUnmodifiableListView) return _favorites;
     // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_results);
+    return EqualUnmodifiableListView(_favorites);
   }
 
   @override
   String toString() {
-    return 'FavoritesState.success(results: $results)';
+    return 'FavoritesState.success(favorites: $favorites)';
   }
 
   @override
@@ -258,12 +258,13 @@ class _$FavoritesStateResultsImpl implements _FavoritesStateResults {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$FavoritesStateResultsImpl &&
-            const DeepCollectionEquality().equals(other._results, _results));
+            const DeepCollectionEquality()
+                .equals(other._favorites, _favorites));
   }
 
   @override
   int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(_results));
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(_favorites));
 
   @JsonKey(ignore: true)
   @override
@@ -276,35 +277,35 @@ class _$FavoritesStateResultsImpl implements _FavoritesStateResults {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() loading,
-    required TResult Function(List<AirQuality> results) success,
+    required TResult Function(List<AirQuality> favorites) success,
     required TResult Function() empty,
     required TResult Function(Exception error) error,
   }) {
-    return success(results);
+    return success(favorites);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? loading,
-    TResult? Function(List<AirQuality> results)? success,
+    TResult? Function(List<AirQuality> favorites)? success,
     TResult? Function()? empty,
     TResult? Function(Exception error)? error,
   }) {
-    return success?.call(results);
+    return success?.call(favorites);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? loading,
-    TResult Function(List<AirQuality> results)? success,
+    TResult Function(List<AirQuality> favorites)? success,
     TResult Function()? empty,
     TResult Function(Exception error)? error,
     required TResult orElse(),
   }) {
     if (success != null) {
-      return success(results);
+      return success(favorites);
     }
     return orElse();
   }
@@ -348,10 +349,10 @@ class _$FavoritesStateResultsImpl implements _FavoritesStateResults {
 }
 
 abstract class _FavoritesStateResults implements FavoritesState {
-  const factory _FavoritesStateResults(final List<AirQuality> results) =
+  const factory _FavoritesStateResults(final List<AirQuality> favorites) =
       _$FavoritesStateResultsImpl;
 
-  List<AirQuality> get results;
+  List<AirQuality> get favorites;
   @JsonKey(ignore: true)
   _$$FavoritesStateResultsImplCopyWith<_$FavoritesStateResultsImpl>
       get copyWith => throw _privateConstructorUsedError;
@@ -397,7 +398,7 @@ class _$FavoritesStateEmptyImpl implements _FavoritesStateEmpty {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() loading,
-    required TResult Function(List<AirQuality> results) success,
+    required TResult Function(List<AirQuality> favorites) success,
     required TResult Function() empty,
     required TResult Function(Exception error) error,
   }) {
@@ -408,7 +409,7 @@ class _$FavoritesStateEmptyImpl implements _FavoritesStateEmpty {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? loading,
-    TResult? Function(List<AirQuality> results)? success,
+    TResult? Function(List<AirQuality> favorites)? success,
     TResult? Function()? empty,
     TResult? Function(Exception error)? error,
   }) {
@@ -419,7 +420,7 @@ class _$FavoritesStateEmptyImpl implements _FavoritesStateEmpty {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? loading,
-    TResult Function(List<AirQuality> results)? success,
+    TResult Function(List<AirQuality> favorites)? success,
     TResult Function()? empty,
     TResult Function(Exception error)? error,
     required TResult orElse(),
@@ -538,7 +539,7 @@ class _$FavoritesStateErrorImpl implements _FavoritesStateError {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() loading,
-    required TResult Function(List<AirQuality> results) success,
+    required TResult Function(List<AirQuality> favorites) success,
     required TResult Function() empty,
     required TResult Function(Exception error) error,
   }) {
@@ -549,7 +550,7 @@ class _$FavoritesStateErrorImpl implements _FavoritesStateError {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? loading,
-    TResult? Function(List<AirQuality> results)? success,
+    TResult? Function(List<AirQuality> favorites)? success,
     TResult? Function()? empty,
     TResult? Function(Exception error)? error,
   }) {
@@ -560,7 +561,7 @@ class _$FavoritesStateErrorImpl implements _FavoritesStateError {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? loading,
-    TResult Function(List<AirQuality> results)? success,
+    TResult Function(List<AirQuality> favorites)? success,
     TResult Function()? empty,
     TResult Function(Exception error)? error,
     required TResult orElse(),

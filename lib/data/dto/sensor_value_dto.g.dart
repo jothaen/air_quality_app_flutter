@@ -1,16 +1,17 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'sensor_value.dart';
+part of 'sensor_value_dto.dart';
 
 // **************************************************************************
 // JsonSerializableGenerator
 // **************************************************************************
 
-SensorValue _$SensorValueFromJson(Map<String, dynamic> json) => SensorValue(
+SensorValueDto _$SensorValueDtoFromJson(Map<String, dynamic> json) =>
+    SensorValueDto(
       (json['v'] as num).toDouble(),
     );
 
-Map<String, dynamic> _$SensorValueToJson(SensorValue instance) =>
+Map<String, dynamic> _$SensorValueDtoToJson(SensorValueDto instance) =>
     <String, dynamic>{
       'v': instance.value,
     };

@@ -1,5 +1,5 @@
-import 'package:air_quality_app/data/model/air_quality_response.dart';
-import 'package:air_quality_app/data/model/search_response.dart';
+import 'package:air_quality_app/data/dto/air_quality_response_dto.dart';
+import 'package:air_quality_app/data/dto/search_response_dto.dart';
 import 'package:dio/dio.dart';
 import 'package:retrofit/retrofit.dart';
 
@@ -12,13 +12,13 @@ abstract class AirQualityApi {
   static const String token = 'c764caaecb0236ba005285305fb23c465ea58a2e';
 
   @GET('/feed/{city}')
-  Future<AirQualityResponse> getAirQuality(
+  Future<AirQualityResponseDto> getAirQuality(
     @Path() String city,
     @Query('token') String key,
   );
 
   @GET('/search/')
-  Future<SearchResponse> searchForCity(
+  Future<SearchResponseDto> searchForCity(
     @Query('keyword') String query,
     @Query('token') String key,
   );

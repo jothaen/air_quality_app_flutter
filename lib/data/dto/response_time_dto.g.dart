@@ -1,16 +1,17 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'response_time.dart';
+part of 'response_time_dto.dart';
 
 // **************************************************************************
 // JsonSerializableGenerator
 // **************************************************************************
 
-ResponseTime _$ResponseTimeFromJson(Map<String, dynamic> json) => ResponseTime(
+ResponseTimeDto _$ResponseTimeDtoFromJson(Map<String, dynamic> json) =>
+    ResponseTimeDto(
       json['s'] as String,
     );
 
-Map<String, dynamic> _$ResponseTimeToJson(ResponseTime instance) =>
+Map<String, dynamic> _$ResponseTimeDtoToJson(ResponseTimeDto instance) =>
     <String, dynamic>{
       's': instance.timeString,
     };

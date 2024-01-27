@@ -1,19 +1,19 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'search_response.dart';
+part of 'search_response_dto.dart';
 
 // **************************************************************************
 // JsonSerializableGenerator
 // **************************************************************************
 
-SearchResponse _$SearchResponseFromJson(Map<String, dynamic> json) =>
-    SearchResponse(
+SearchResponseDto _$SearchResponseDtoFromJson(Map<String, dynamic> json) =>
+    SearchResponseDto(
       (json['data'] as List<dynamic>)
-          .map((e) => SearchResult.fromJson(e as Map<String, dynamic>))
+          .map((e) => SearchResultDto.fromJson(e as Map<String, dynamic>))
           .toList(),
     );
 
-Map<String, dynamic> _$SearchResponseToJson(SearchResponse instance) =>
+Map<String, dynamic> _$SearchResponseDtoToJson(SearchResponseDto instance) =>
     <String, dynamic>{
       'data': instance.data,
     };
