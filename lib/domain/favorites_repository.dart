@@ -14,19 +14,19 @@ class FavoritesRepository {
   }
 
   Future<void> addToFavorites(int id) async {
-    final box = await _openBox();
     final allFavorites = await getAllFavoritesIds();
     if (!allFavorites.contains(id)) {
       allFavorites.add(id);
+      final box = await _openBox();
       await box.put(_keyFavorites, allFavorites);
     }
   }
 
   Future<void> removeFromFavorites(int id) async {
-    final box = await _openBox();
     final allFavorites = await getAllFavoritesIds();
     if (allFavorites.contains(id)) {
       allFavorites.remove(id);
+      final box = await _openBox();
       await box.put(_keyFavorites, allFavorites);
     }
   }
