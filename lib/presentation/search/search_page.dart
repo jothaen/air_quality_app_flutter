@@ -1,11 +1,11 @@
 import 'package:air_quality_app/common/extensions/context_extensions.dart';
-import 'package:air_quality_app/common/gaps.dart';
-import 'package:air_quality_app/common/widgets/empty_results_card.dart';
-import 'package:air_quality_app/common/widgets/error_card.dart';
-import 'package:air_quality_app/common/widgets/loading_list.dart';
 import 'package:air_quality_app/config/app_route.dart';
 import 'package:air_quality_app/config/locator.dart';
 import 'package:air_quality_app/domain/model/city_search_result.dart';
+import 'package:air_quality_app/presentation/common/gaps.dart';
+import 'package:air_quality_app/presentation/common/widgets/empty_results_card.dart';
+import 'package:air_quality_app/presentation/common/widgets/error_card.dart';
+import 'package:air_quality_app/presentation/common/widgets/loading_list.dart';
 import 'package:air_quality_app/presentation/search/cubit/search_cubit.dart';
 import 'package:air_quality_app/presentation/search/cubit/state/search_state.dart';
 import 'package:air_quality_app/presentation/station_details/station_details_page.dart';

@@ -1,6 +1,6 @@
 import 'package:air_quality_app/common/extensions/context_extensions.dart';
-import 'package:air_quality_app/common/gaps.dart';
 import 'package:air_quality_app/domain/model/air_quality.dart';
+import 'package:air_quality_app/presentation/common/gaps.dart';
 import 'package:air_quality_app/presentation/station_details/util/air_quality_values_mapper.dart';
 import 'package:flutter/material.dart';
 

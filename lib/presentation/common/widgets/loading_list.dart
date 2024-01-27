@@ -1,4 +1,4 @@
-import 'package:air_quality_app/common/widgets/loading_card.dart';
+import 'package:air_quality_app/presentation/common/widgets/loading_card.dart';
 import 'package:flutter/material.dart';
 
 class LoadingList extends StatelessWidget {

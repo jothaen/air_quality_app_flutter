@@ -1,10 +1,10 @@
 import 'package:air_quality_app/common/app_assets.dart';
-import 'package:air_quality_app/common/app_colors.dart';
 import 'package:air_quality_app/common/extensions/context_extensions.dart';
-import 'package:air_quality_app/common/widgets/air_quality_card.dart';
-import 'package:air_quality_app/common/widgets/error_card.dart';
-import 'package:air_quality_app/common/widgets/loading_card.dart';
 import 'package:air_quality_app/config/locator.dart';
+import 'package:air_quality_app/presentation/common/app_colors.dart';
+import 'package:air_quality_app/presentation/common/widgets/air_quality_card.dart';
+import 'package:air_quality_app/presentation/common/widgets/error_card.dart';
+import 'package:air_quality_app/presentation/common/widgets/loading_card.dart';
 import 'package:air_quality_app/presentation/station_details/cubit/state/station_details_state.dart';
 import 'package:air_quality_app/presentation/station_details/cubit/station_details_cubit.dart';
 import 'package:flutter/material.dart';
